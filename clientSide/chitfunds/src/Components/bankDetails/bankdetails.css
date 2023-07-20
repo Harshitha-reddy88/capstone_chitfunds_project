@@ -5,6 +5,12 @@
     padding:50px 100px 50px 100px;
     margin: auto;
     margin-top: 30px;
+    
+}
+.images{
+    background-image: url("https://etimg.etb2bimg.com/photo/94844360.cms");
+    width: 800px;
+    height: 800px;
 }
 .BankDetails{
     display: flex;

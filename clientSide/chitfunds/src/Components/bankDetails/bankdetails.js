@@ -1,20 +1,23 @@
 import React from 'react';
 import './bankdetails.css';
+import { bankData } from '../constant/bankdetailsConst';
 function BankDetails(){
     return(
         <div>
-            <div className='formDiv'>
+
+            <div>
+                
+                <div className='formDiv'>
                 <div className='formName'>Bank Information Form</div>
 
                 <div className='bankName BankDetails'>
-
                     <div>
-                        <div className='details fontSize'>Bank Name</div>
+                        <p className='details fontSize'>{bankData[0]}</p>
                         <input  className="dataInputs" type="text"/>
                     </div>
                     
                     <div>
-                        <div className='dataInputTags details fontSize'>Contact Details</div>
+                        <p className='dataInputTags details fontSize'>{bankData[1]}</p>
                         <input className="dataInputs dataInputTags" type="number"/>
                     </div>
                 </div>
@@ -22,30 +25,30 @@ function BankDetails(){
                 <div className='BankDetails'>
 
                     <div>
-                        <div className='topInputs details fontSize'>User First Name</div>
+                        <p className='topInputs details fontSize'>{bankData[2]}</p>
                         <input className="dataInputs" type="text"/>
                     </div>
                     
                     <div>
-                        <div className="dataInputTags topInputs details fontSize">User Last Name</div>
+                        <p className='dataInputTags topInputs details fontSize'>{bankData[3]}</p>
                         <input className="dataInputs dataInputTags" type="text"/>
                     </div>
                 </div>
 
                 <div className='BankDetails'>
                    <div>
-                      <div className='topInputs details fontSize'>Branch Name</div>
+                      <p className='topInputs details fontSize'>{bankData[4]}</p>
                       <input className="dataInputs" type="number"/>
                    </div>
 
                    <div>
-                      <div className='topInputs details dataInputTags fontSize'>Branch Number</div>
+                      <p className='topInputs details dataInputTags fontSize'>{bankData[5]}</p>
                       <input className="dataInputs dataInputTags" type="number"/>
                    </div>
                 </div>
 
                 <div>
-                    <div className='branchInputs details fontSize'>Branch Address</div>
+                    <p className='branchInputs details fontSize'>{bankData[5]}</p>
                     <div>
                         <input className="dataInputs branch" type="text" placeholder='Street Address'/>
                     </div>
@@ -85,6 +88,7 @@ function BankDetails(){
                     </div>
                 </div>
 
+            </div>
             </div>
         </div>
     );
