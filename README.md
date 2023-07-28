@@ -1,7 +1,7 @@
 <h1>My Project(ChitFunds)😇</h1>
 
 <h2>About Project</h2>
-<p>An online platform for secure and transparent chit fund investments, providing opportunities for savings and financial growth</p>
+<p>An online platform for secure and transparent chit fund investments, providing opportunities for savings and financia growth</p>
 <h2>Technologies used</h2>
 <ul>
   <li>Html</li>
