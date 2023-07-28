@@ -24,3 +24,11 @@
  :dart: Tracking chit fund member details<br>
  :dart: Saving bank details securely<br>
  :dart: Tracking the chit funds sum assured details
+ <h1>Aim </h1>
+ <p>The project aims to stop chit fund members from being cheated by dishonest managers. Many people have lost money and trust due to deception in the chit fund industry. The goal is to create a solution, 'ChitFunds', that empowers members and holds managers accountable, making chit funds more reliable and transparent.</p>
+ <a href="https://www.figma.com/proto/Lp4urqxihzCVn2scj89EO0/chitfunds?type=design&node-id=1-2&t=deltIKyBeGEk8cAc-0&scaling=min-zoom&page-id=0%3A1" alt="error">figma link</a>
+ <h2>My wesite looks like</h2>
+
+ ![image](https://github.com/Harshitha-reddy88/capstone_chitfunds_project/assets/119464978/b26cfd95-1c87-4b0e-b0aa-b32d564d0324)
+ <p></p>
+
