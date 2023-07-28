@@ -1,0 +1,69 @@
+.formDiv{
+    border: 2px solid rgb(122, 132, 137);
+    width:573px;
+    background-color: rgb(218, 235, 242);
+    padding:50px 100px 50px 100px;
+    margin: auto;
+    margin-top: 30px;
+    
+}
+.images{
+    background-image: url("https://etimg.etb2bimg.com/photo/94844360.cms");
+    width: 800px;
+    height: 800px;
+}
+.BankDetails{
+    display: flex;
+}
+.formName{
+    text-align: center;
+    font-size: 35px;
+}
+.bankName{
+    margin-top: 50px;
+}
+.dataInputs{
+    padding: 10px 40px 10px 40px;
+}
+.dataInputTags{
+    margin-left: 50px;
+}
+.topInputs{
+    margin-top: 10px;
+}
+.topInput{
+    margin-top: 20px;
+}
+.branch{
+    padding: 10px 260px 10px 10px;
+}
+.branchaddress{
+    padding: 10px;
+}
+.details{
+    margin-bottom: 5px;
+}
+.AccountDiv{
+    margin-top: 20px;
+}
+.fontSize{
+    font-size: 20px;
+}
+.accountInputs{
+    margin-top: 10px;
+}
+.radioButton{
+    margin-top: 10px;
+    /* width: 80px; */
+}
+.sendButton{
+    margin-left:180px;
+    /* margin-top: 20px; */
+    padding: 10px 30px 10px 30px;
+}
+.label{
+    width: 20px;
+}
+.branchInputs{
+    margin-top: 30px;
+}

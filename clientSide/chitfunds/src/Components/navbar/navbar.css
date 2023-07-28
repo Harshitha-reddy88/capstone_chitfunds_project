@@ -1,0 +1,37 @@
+.logo{
+    width:70px;
+    border-radius: 300px;
+}
+.navBar{
+    display: flex;
+    background-color: #dad7cd;
+    border-radius:20px;
+}
+.logodiv{
+    margin-left: 50px;
+}
+.chiti{
+    margin-left: 80px;
+    margin-top: 5px;
+}
+.signup{
+    margin-top: 5px;
+    display: flex;
+    margin-left:200px;
+}
+.signuplogo{
+    width: 40px;
+    border-radius: 800px;
+}
+.searchdiv{
+    margin-top: 25px;
+    margin-left: 600px;
+}
+.search{
+    padding: 6px 30px 6px 30px;
+    border-radius:100px;
+    border: solid 2px white;
+}
+.search:hover{
+    border: 2px solid #dad7cd;
+}
