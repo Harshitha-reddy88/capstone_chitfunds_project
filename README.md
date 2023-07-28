@@ -1,5 +1,4 @@
 <h1>My Project(ChitFunds)😇</h1>
-
 <h2>About Project</h2>
 <p>An online platform for secure and transparent chit fund investments, providing opportunities for savings and financia growth</p>
 <h2>Technologies used</h2>
@@ -30,5 +29,6 @@
  <h2>My wesite looks like</h2>
 
  ![image](https://github.com/Harshitha-reddy88/capstone_chitfunds_project/assets/119464978/b26cfd95-1c87-4b0e-b0aa-b32d564d0324)
- <p></p>
-
+ <p>wanna try it</p>
+ <img style="width:100px" src="https://github.com/mayankchaudhary26/Cool-Readme-ideas/raw/master/data/giphy.gif"alt="error"/>
+ 
