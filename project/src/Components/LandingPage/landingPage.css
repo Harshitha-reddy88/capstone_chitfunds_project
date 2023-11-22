@@ -1,0 +1,65 @@
+        .backgroungImg {
+            background-image: url("/home/harshitha/Desktop/myproject_chitfunds/project/public/resourses/shakHand.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .firstDiv {
+            background-color: black;
+            height: 300px;
+            opacity: 0.6;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        
+        .text {
+            margin-top: 0px;
+            text-align: center;
+            color: white
+        }
+        
+        .secondDiv {
+            background-color: black;
+            margin-top: 280px;
+            background-color: black;
+            height: 400px;
+            color: white;
+            opacity: 0.6;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        
+        .loginBtn {
+            display: flex;
+            margin: auto;
+            padding: 10px 60px 10px 60px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+            border: none;
+            border-radius: 20px;
+            border: 1px solid cyan;
+            cursor: pointer;
+            transition: background-color 2.5s ease;
+        }
+        
+        .loginBtn:hover {
+            background-color: cyan;
+            color: black;
+        }
+        
+        .link {
+            text-decoration: none;
+        }
+        
+        .heading {
+            margin-top: 50px;
+            font-size: 60px;
+            background: linear-gradient( to right, #f32170, #ff6b08, #cf23cf, #eedd44);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }

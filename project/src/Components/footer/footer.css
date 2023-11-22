@@ -1,0 +1,43 @@
+.footerLine {
+    width: 3px;
+    height: 25px;
+    background-color: black;
+    margin-top: 20px;
+    /* margin-right: 10px; */
+}
+
+.footerText {
+    display: flex;
+}
+
+.footer {
+    background-color: aquamarine;
+}
+
+.footerAuction {
+    margin-left: 450px;
+}
+
+.footerDouble {
+    margin-left: 250px;
+}
+
+.footerHeading {
+    margin-left: 10px;
+}
+
+.footerImg {
+    width: 60px;
+    margin-right: 5px;
+}
+
+.instaImg {
+    width: 30px;
+    margin-top: 13px;
+    margin-right: 20px;
+}
+
+.imagesFooter {
+    display: flex;
+    margin-left: 820px;
+}

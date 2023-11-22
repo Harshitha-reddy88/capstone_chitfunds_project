@@ -1,0 +1,60 @@
+.logo {
+    width: 60px;
+    border-radius: 300px;
+}
+
+.navBar {
+    display: flex;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.logodiv {
+    margin-left: 70px;
+}
+
+.decoration {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.aboutChit {
+    cursor: pointer;
+}
+
+.navText {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.navText::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: cyan;
+    transition: width 2.5s ease;
+}
+
+.navText:hover::after {
+    width: 100%;
+}
+
+.navText:hover {
+    border-bottom: 3px solid cyan;
+}
+
+.navMargin {
+    margin-left: 80px;
+}
+
+.navmargin {
+    margin-left: 650px;
+}

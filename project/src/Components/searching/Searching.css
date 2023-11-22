@@ -1,0 +1,77 @@
+body {
+    background-image: none;
+}
+
+.searchingMain {
+    margin-top: 150px;
+    justify-content: center;
+}
+
+.searchingDiv {
+    display: grid;
+    place-items: center;
+    margin-bottom: 50px;
+}
+
+.serchHeading {
+    text-align: center;
+}
+
+.childDiv {
+    width: 900px;
+    padding: 30px 100px 30px 100px;
+}
+
+.connect {
+    width: 40px;
+    height: 5px;
+    background-color: black;
+    margin-top: 130px;
+}
+
+.processDiv {
+    display: flex;
+}
+
+.process {
+    width: 250px;
+    height: 250px;
+    border-radius: 200px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.unorderdList {
+    margin: auto;
+    text-align: justify;
+    margin-top: 50px;
+    color: gray;
+}
+
+.searchingData {
+    text-align: justify;
+}
+
+.backEndImg {
+    margin-left: 80px;
+    width: 700px;
+}
+
+.exploreBtn {
+    padding: 10px 30px 10px 30px;
+    background-color: rgb(89, 89, 242);
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.exploreBtn:hover {
+    font-size: 22px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    cursor: pointer;
+}
+
+.hrTag {
+    margin-top: 30px;
+}
