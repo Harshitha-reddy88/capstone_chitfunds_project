@@ -15,8 +15,8 @@ import DoubleForm from "../doubleChit/Double";
 import AuctionChiti from "../auctionChiti/auctionChiti";
 import ChitData from "../chitData/chitData";
 import DoubleMember from "../doubleMember/doubleMember";
-import AgentChiti from "../agentChiti/agentChiti";
 import AgentMember from "../agentMember/agentMember";
+import AgentChiti from "../agentChiti/agentChiti";
 
 function Routers() {
     return ( 
@@ -37,7 +37,8 @@ function Routers() {
             <Route path ='/AuctionForm' element={<AuctionChiti/>}/>
             <Route path ='/chitData' element={<ChitData/>}/>
             <Route path ='/doubleMember' element={<DoubleMember/>}/>
-            <Route path ='/agentChiti' element={<AgentChiti/>}/>
+            {/* <Route path ='/agentChiti' element={<AgentChiti/>}/> */}
+            <Route path="/agentChiti" element={<AgentChiti/>}/>
             <Route path ='/agentMember' element={<AgentMember/>}/>
             </Route> 
         </Routes> 

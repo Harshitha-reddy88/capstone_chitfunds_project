@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "../navbar/navbar";
 import "./agentMember.css";
+import axios from "axios";
 
 function AgentMember() {
-  const[agentMemberSno,setAgentMemberSno]=useState('');
+  const[agentMemberId,setAgentMemberId]=useState('');
   const[agentMemberName,setAgentMemberName]=useState('');
   const[agentMemberAge,setAgentMemberAge]=useState('');
   const[agentMemberAddress,setAgentMemberAddress]=useState('');
@@ -12,11 +13,11 @@ function AgentMember() {
   const[agentMembertableData, setAgentMemberTableData] = useState([]);
   const[agentMembershowInputs,setAgentMemberShowInputs] = useState(true);
 
-  const doubleMmeberSubmit =(e)=>{
+  const doubleMmeberSubmit = async (e)=>{
     e.preventDefault();
     if
     (
-        agentMemberSno==="" || agentMemberSno===" "||
+        agentMemberId==="" || agentMemberId===" "||
         agentMemberName==="" || agentMemberName===" "||
         agentMemberAge==="" || agentMemberAge===" "||
         agentMemberAddress==="" || agentMemberAddress===" "||
@@ -28,21 +29,32 @@ function AgentMember() {
     else{
       const agentMemberData =
       {
-        agentMemberSno,
+        agentMemberId,
         agentMemberName,
         agentMemberAge,
         agentMemberAddress,
         agentMemberAmount,
         agentMemberPhoneNumber
       };
-      setAgentMemberTableData([...agentMembertableData,agentMemberData]);
+      try
+      {
 
-      setAgentMemberSno('');
-      setAgentMemberName('');
-      setAgentMemberAge('');
-      setAgentMemberAddress('');
-      setAgentMemberAmount('');
-      setAgentMemberPhoneNumber('');
+        const response= await axios.post("http://localhost:8080/agentMember",agentMemberData);
+        console.log("data posted",response.data);
+
+        setAgentMemberTableData([...agentMembertableData,agentMemberData]);
+        setAgentMemberId('');
+        setAgentMemberName('');
+        setAgentMemberAge('');
+        setAgentMemberAddress('');
+        setAgentMemberAmount('');
+        setAgentMemberPhoneNumber('');
+
+      }
+      catch (error) 
+      {
+        console.error("Error posting data:", error);
+      }
 
     }
   };
@@ -82,7 +94,7 @@ function AgentMember() {
             <h3>S.NO :</h3>
           </div>
           <div>
-            <input className="agentMemberTags"type="number" value={agentMemberSno} onChange={(e)=>setAgentMemberSno(e.target.value)}/>
+            <input className="agentMemberTags"type="number" value={agentMemberId} onChange={(e)=>setAgentMemberId(e.target.value)}/>
           </div>
           <div className="">
             <button className="submitbtn" type="submit">
@@ -158,7 +170,7 @@ function AgentMember() {
         <tbody>
           {agentMembertableData.map((data, index) => (
             <tr key={index}>
-              <td className="agentMemberData">{data.agentMemberSno}</td>
+              <td className="agentMemberData">{data.agentMemberId}</td>
               <td className="agentMemberData">{data.agentMemberName}</td>
               <td className="agentMemberData">{data.agentMemberAge}</td>
               <td className="agentMemberData">{data.agentMemberAmount}</td>

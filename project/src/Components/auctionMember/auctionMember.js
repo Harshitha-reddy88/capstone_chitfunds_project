@@ -1,192 +1,7 @@
-// import React from "react";
-
-// function AuctionMember(){
-//     return(
-//         <div>
-//             <input placeholder="S.NO"/>
-//             <input placeholder="name"/>
-//             <input placeholder="age"/>
-//             <input placeholder="address"/>
-//             <input placeholder="amount"/>
-//             <input placeholder="phoneNumber"/>
-//         </div>
-//     )
-// }
-// export default AuctionMember;
-
-// import React, { useState } from "react";
-
-// function AuctionMember() {
-//   const [formData, setFormData] = useState({
-//     SNO: "",
-//     name: "",
-//     age: "",
-//     address: "",
-//     amount: "",
-//     phoneNumber: ""
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({
-//       ...formData,
-//       [name]: value
-//     });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-
-//     fetch("http://localhost:8080/postAuction", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(formData)
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log("Success:", data);
-//         // Perform any actions upon successful submission
-//       })
-//       .catch((error) => {
-//         console.error("Error:", error);
-//         // Handle errors if any
-//       });
-//   };
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="S.NO"
-//           name="SNO"
-//           value={formData.SNO}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Name"
-//           name="name"
-//           value={formData.name}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Age"
-//           name="age"
-//           value={formData.age}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Address"
-//           name="address"
-//           value={formData.address}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Amount"
-//           name="amount"
-//           value={formData.amount}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="text"
-//           placeholder="Phone Number"
-//           name="phoneNumber"
-//           value={formData.phoneNumber}
-//           onChange={handleChange}
-//         />
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default AuctionMember;
-
-// import React from "react";
-// import Navbar from "../navbar/navbar";
-// import "./auctionMember.css";
-// function AuctionMember(){
-//   return(
-//     <div>
-
-//       <div className="navPage">
-//         <Navbar/>
-//       </div>
-
-//       <div>
-//         <button className="backBtn">Back</button>
-//       </div>
-
-//       <div className="auctionMemberHeaging">
-//         <h1><u>*Chiti Member Data*</u></h1>
-//       </div>
-
-//       <form>
-//         <div className="auctionMember auctionMemberMargin">
-//           <div><h3>S.NO :</h3></div>
-//             <div>
-//               <input className="auctionMemberTags"type="number"/>
-//             </div>
-//             <div className="">
-//               <button className="submitbtn" type="submit">SUBMIT</button>
-//             </div>
-//         </div>
-
-//         <div className="auctionMember auctionMemberGap">
-//           <div className="auctionMember">
-//             <div><h3>NAME :</h3></div>
-//             <div>
-//               <input className="auctionMemberTags"type="text"/>
-//             </div>
-//           </div>
-
-//           <div className="auctionMember auctiongap">
-//             <div><h3>AGE :</h3></div>
-//             <div>
-//               <input className="auctionMemberTags"type="number"/>
-//             </div>
-//           </div>
-
-//           <div className="auctionMember auctiongap">
-//             <div><h3>AMOUNT :</h3></div>
-//             <div>
-//               <input className="auctionMemberTags"type="number"/>
-//             </div>
-//           </div>
-
-//           <div className="auctionMember auctiongap">
-//             <div><h3>PHONE NUMBER :</h3></div>
-//             <div>
-//               <input className="auctionMemberTags"type="number"/>
-//             </div>
-//           </div>
-
-//           <div className="auctionMember auctiongap">
-//           <div><h3>ADDRESS :</h3></div>
-//           <div>
-//             <input className="auctionMemberTags"type="text"/>
-//           </div>
-//         </div>
-
-//         </div>
-
-//       </form>
-      
-
-//     </div>
-//   )
-// }
-// export default AuctionMember;
-
 import React, { useState } from "react";
 import Navbar from "../navbar/navbar";
 import "./auctionMember.css";
+import axios from "axios";
 
 function AuctionMember() {
   const[auctionMemberSno,setAuctionauctionMemberSno]=useState('');
@@ -198,7 +13,7 @@ function AuctionMember() {
   const [auctionMembertableData, setAuctionMemberTableData] = useState([]);
   const [auctionMembershowInputs,setAuctionMemberShowInputs] = useState(true);
 
-  const auctionMmeberSubmit =(e)=>{
+  const auctionMmeberSubmit =async(e)=>{
     e.preventDefault();
     if
     (
@@ -221,15 +36,22 @@ function AuctionMember() {
         auctionMemberAmount,
         auctionMemberPhoneNumber
       };
-      setAuctionMemberTableData([...auctionMembertableData,auctionMemberData]);
+      try{
+        const response=await axios.post("http://localhost:8080/postAuction",auctionMemberData);
+        console.log("Data added",response.data);
 
-      setAuctionauctionMemberSno('');
-      setAuctionauctionMemberName('');
-      setAuctionMemberAge('');
-      setAuctionMemberAddress('');
-      setAuctionMemberAmount('');
-      setAuctionMemberPhoneNumber('');
+        setAuctionMemberTableData([...auctionMembertableData,auctionMemberData]);
+        setAuctionauctionMemberSno('');
+        setAuctionauctionMemberName('');
+        setAuctionMemberAge('');
+        setAuctionMemberAddress('');
+        setAuctionMemberAmount('');
+        setAuctionMemberPhoneNumber('');
 
+      }
+      catch(error){
+        console.error("error data posting",error);
+      }
     }
   };
 

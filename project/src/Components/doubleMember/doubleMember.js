@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "../navbar/navbar";
 import "./doubleMember.css";
+import axios from "axios";
 
 function DoubleMember() {
-  const[doubleMemberSno,setDoubleMemberSno]=useState('');
+  const[doubleMemberId,setDoubleMemberId]=useState('');
   const[doubleMemberName,setDoubleMemberName]=useState('');
   const[doubleMemberAge,setDoubleMemberAge]=useState('');
   const[doubleMemberAddress,setDoubleMemberAddress]=useState('');
@@ -12,11 +13,11 @@ function DoubleMember() {
   const[doubleMembertableData, setDoubleMemberTableData] = useState([]);
   const[doubleMembershowInputs,setDoubleMemberShowInputs] = useState(true);
 
-  const doubleMmeberSubmit =(e)=>{
+  const doubleMmeberSubmit = async(e)=>{
     e.preventDefault();
     if
     (
-        doubleMemberSno==="" || doubleMemberSno===" "||
+      doubleMemberId==="" || doubleMemberId===" "||
         doubleMemberName==="" || doubleMemberName===" "||
         doubleMemberAge==="" || doubleMemberAge===" "||
         doubleMemberAddress==="" || doubleMemberAddress===" "||
@@ -28,21 +29,29 @@ function DoubleMember() {
     else{
       const doubleMemberData =
       {
-        doubleMemberSno,
+        doubleMemberId,
         doubleMemberName,
         doubleMemberAge,
         doubleMemberAddress,
         doubleMemberAmount,
         doubleMemberPhoneNumber
       };
-      setDoubleMemberTableData([...doubleMembertableData,doubleMemberData]);
+      try{
+        const response=await axios.post("http://localhost:8080/DoubleMember",doubleMemberData);
+        console.log("Data stored",response.data);
 
-      setDoubleMemberSno('');
-      setDoubleMemberName('');
-      setDoubleMemberAge('');
-      setDoubleMemberAddress('');
-      setDoubleMemberAmount('');
-      setDoubleMemberPhoneNumber('');
+        setDoubleMemberTableData([...doubleMembertableData,doubleMemberData]);
+        setDoubleMemberId('');
+        setDoubleMemberName('');
+        setDoubleMemberAge('');
+        setDoubleMemberAddress('');
+        setDoubleMemberAmount('');
+        setDoubleMemberPhoneNumber('');
+
+      }
+      catch(error){
+        console.error("Error posting data",error);
+      }
 
     }
   };
@@ -82,7 +91,7 @@ function DoubleMember() {
             <h3>S.NO :</h3>
           </div>
           <div>
-            <input className="auctionMemberTags"type="number" value={doubleMemberSno} onChange={(e)=>setDoubleMemberSno(e.target.value)}/>
+            <input className="auctionMemberTags"type="number" value={doubleMemberId} onChange={(e)=>setDoubleMemberId(e.target.value)}/>
           </div>
           <div className="">
             <button className="submitbtn" type="submit">
@@ -158,7 +167,7 @@ function DoubleMember() {
         <tbody>
           {doubleMembertableData.map((data, index) => (
             <tr key={index}>
-              <td className="doubleMemberData">{data.doubleMemberSno}</td>
+              <td className="doubleMemberData">{data.doubleMemberId}</td>
               <td className="doubleMemberData">{data.doubleMemberName}</td>
               <td className="doubleMemberData">{data.doubleMemberAge}</td>
               <td className="doubleMemberData">{data.doubleMemberAmount}</td>
