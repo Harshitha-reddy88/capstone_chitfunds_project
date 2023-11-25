@@ -17,6 +17,7 @@
   <img style="width:60px"src="https://ionicframework.com/docs/icons/logo-react-icon.png" alt="error"/>
   <img style="width:80px"src="https://logodix.com/logo/1614302.png" alt="error"/>
 </div>
+
 <h2>Functionalities</h2>
  :dart: Signup with your details<br>
  :dart: Login with your private sigup details<br>
@@ -28,7 +29,10 @@
  <a href="https://www.figma.com/proto/Lp4urqxihzCVn2scj89EO0/chitfunds?type=design&node-id=1-2&t=deltIKyBeGEk8cAc-0&scaling=min-zoom&page-id=0%3A1" alt="error">figma link</a>
  <h2>My wesite looks like</h2>
 
- ![image](https://github.com/Harshitha-reddy88/capstone_chitfunds_project/assets/119464978/b26cfd95-1c87-4b0e-b0aa-b32d564d0324)
+ ![image](https://github.com/Harshitha-reddy88/capstone_chitfunds_project/assets/119464978/2e16fe19-dce5-42c9-a967-ea91b35bad45)
  <p>wanna try it</p>
  <img style="width:100px" src="https://github.com/mayankchaudhary26/Cool-Readme-ideas/raw/master/data/giphy.gif"alt="error"/>
+
+
+ 
  
