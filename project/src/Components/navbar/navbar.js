@@ -18,7 +18,7 @@ function Navbar(){
                         <h4 className="navText navMargin"><a className="decoration" href="/auctionForm">Auction Chiti</a></h4>
                         <h4 className="navText navMargin"><a className="decoration" href="/DoubleForm">Double Chiti</a></h4>
                         <h4 className="navText navMargin"><a className="decoration" href="/agent">Agent Chiti</a></h4>
-                        <h4 onClick={change} className="navText navmargin aboutChit"><a >About Chits</a></h4>
+                        <h4 onClick={change} className="navText navmargin aboutChit">About Chits</h4>
                   </div>
 
             </nav>

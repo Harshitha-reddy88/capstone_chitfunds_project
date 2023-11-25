@@ -38,18 +38,22 @@
     bottom: -2px;
     left: 0;
     width: 0;
+    bottom: 0;
     height: 2px;
+    margin-bottom: 15px;
     background-color: cyan;
     transition: width 2.5s ease;
+    border-bottom: 2px solid cyan;
 }
 
 .navText:hover::after {
     width: 100%;
 }
 
-.navText:hover {
+
+/* .navText:hover {
     border-bottom: 3px solid cyan;
-}
+} */
 
 .navMargin {
     margin-left: 80px;

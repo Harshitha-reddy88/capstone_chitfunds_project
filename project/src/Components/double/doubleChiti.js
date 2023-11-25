@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./doubleChiti.css";
 import Navbar from "../navbar/navbar";
 import axios from "axios";
@@ -9,8 +9,17 @@ function DoubleChiti()
     const [doubleDataChitValue, setDoubleDataChitValue] = useState('');
     const [doubleDataMonths, setDoubleDataMonths] = useState('');
     const [doubleDataSubscription, setDoubleDataSubscription] = useState('');
-    const [doubleTableData, setDoubleTableData] = useState([]);
+    //const [doubleTableData, setDoubleTableData] = useState([]);
     const [doubleChitshowInputs,setDoubleChitShowInputs] = useState(true);
+
+    const localStorageKey="doubleChitiData";
+    const [doubleTableData, setDoubleTableData] = useState(()=>{
+        const storedData=localStorage.getItem(localStorageKey);
+        return storedData ? JSON.parse(storedData):[];
+    });
+    useEffect(()=>{
+        localStorage.setItem(localStorageKey,JSON.stringify(doubleTableData))
+    },[doubleTableData]);
 
     const handleSubmit = async (e) => 
     {
@@ -82,7 +91,7 @@ function DoubleChiti()
                     <input className="doubleTags"type="number"value={doubleDataid}onChange={(e) => setDoubleDataid(e.target.value)}/>
                 </div>
                 <div>
-                    <button className="submitbtn"  type="submit">SUBMIT</button>
+                    <button className="pageSubmitbtn"  type="submit">SUBMIT</button>
                 </div>
             </div>
         

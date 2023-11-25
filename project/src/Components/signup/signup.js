@@ -109,3 +109,108 @@
 //     )
 // }
 // export default Signup;
+
+// import React from "react";
+// import "./signup.css";
+// function Signup(){
+
+//     let card=document.getElementById("card");
+
+//     function openRegister(){
+//         card.style.transform="rotateY(-180deg)";
+//     }
+//     function openLogin(){
+//         card.style.transform="rotateY(0deg)";
+//     }
+
+//     return(
+//         <div className="container">
+//             <div className="card">
+//                 <div className="inner-box" id="card">
+//                     <div className="card-front">
+//                         <h2>LOGIN</h2>
+//                         <form>
+//                             <input type="email" placeholder="Your Email Id" className="input-box" required/>
+//                             <input type="password" placeholder="Password" className="input-box" required/>
+//                             <button className="sumit-btn" type="submit">Submit</button>
+//                             <input type="checkbox"/><span className="signupSpan">Remember Me</span>
+//                         </form>
+//                         <button type="button" class="signupBtn" onClick={openRegister()}>I'm New Here</button>
+//                         <a href="" className="signupAnchor">Forgot Password</a>
+//                     </div>
+
+
+
+//                     <div className="card-back">
+//                     <h2>REGISTER</h2>
+//                         <form>
+//                             <input type="text" placeholder="Your Name" className="input-box" required/>
+//                             <input type="email" placeholder="Your Email Id" className="input-box" required/>
+//                             <input type="password" placeholder="Password" className="input-box" required/>
+//                             <button className="sumit-btn" type="submit">Submit</button>
+//                             <input type="checkbox"/><span className="signupSpan">Remember Me</span>
+//                         </form>
+//                         <button type="button" class="signupBtn" onClick={openLogin()}>I've an account</button>
+//                         <a href="" className="signupAnchor">Forgot Password</a>
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+// export default Signup;
+
+import React from "react";
+import "./signup.css";
+
+function Signup(){
+
+    const openRegister = () => {
+        const card = document.getElementById("card");
+        if (card) {
+            card.style.transform="rotateY(-180deg)";
+        }
+    };
+
+    const openLogin = () => {
+        const card = document.getElementById("card");
+        if (card) {
+            card.style.transform="rotateY(0deg)";
+        }
+    };
+
+    return (
+        <div className="container">
+            <div className="card">
+                <div className="inner-box" id="card">
+                    <div className="card-front">
+                        <h2 className="signupHeading">LOGIN</h2>
+                        <form>
+                            <input type="email" placeholder="Your Email Id" className="input-box" required/>
+                            <input type="password" placeholder="Password" className="input-box" required/>
+                            <button className="signupSubmit" type="submit" >Submit</button>
+                            
+                            <input type="checkbox"/><span className="signupSpan">Remember Me</span>
+                        </form>
+                        <button type="button" className="signupBtn" onClick={openRegister}>I'm New Here</button>
+                        <a href="/home" className="signupAnchor">Forgot Password</a>
+                    </div>
+                    <div className="card-back">
+                        <h2 className="signupHeading">REGISTER</h2>
+                        <form>
+                            <input type="text" placeholder="Your Name" className="input-box" required/>
+                            <input type="email" placeholder="Your Email Id" className="input-box" required/>
+                            <input type="password" placeholder="Password" className="input-box" required/>
+                            <button className="signupSubmit" type="submit">Submit</button>
+                            <input type="checkbox"/><span className="signupSpan">Remember Me</span>
+                        </form>
+                        <button type="button" className="signupBtn" onClick={openLogin}>I've an account</button>
+                        <a href="/home" className="signupAnchor">Forgot Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Signup;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./agentChiti.css";
 import Navbar from "../navbar/navbar";
@@ -8,8 +8,18 @@ function AgentChiti() {
     const [agentDataChitValue, setAgentDataChitValue] = useState('');
     const [agentDataMonths, setAgentDataMonths] = useState('');
     const [agentDataSubscription, setAgentDataSubscription] = useState('');
-    const [agentTableData, setAgentTableData] = useState([]);
+    //const [agentTableData, setAgentTableData] = useState([]);
     const [agentChitshowInputs, setAgentChitShowInputs] = useState(true);
+
+    const localStorageKey="agentChitiData";
+    const [agentTableData, setAgentTableData] = useState(()=>{
+        const storedData=localStorage.getItem(localStorageKey);
+        return storedData ? JSON.parse(storedData):[];
+    });
+
+    useEffect(()=>{
+        localStorage.setItem(localStorageKey,JSON.stringify(agentTableData))
+    },[agentTableData]);
 
     const agentChitihandleSubmit = async (e) => {
         e.preventDefault();
@@ -87,7 +97,7 @@ function AgentChiti() {
                         </div>
 
                         <div>
-                            <button className="submitbtn" type="submit">SUBMIT</button>
+                            <button className="pageSubmitbtn" type="submit">SUBMIT</button>
                         </div>
                     </div>
 

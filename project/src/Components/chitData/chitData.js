@@ -1,5 +1,5 @@
                            
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./chitData.css";
 import Navbar from "../navbar/navbar";
 import axios from "axios";
@@ -10,8 +10,17 @@ function ChitData()
     const [chitValue, setChitValue] = useState('');
     const [numMonths, setNumMonths] = useState('');
     const [monthlySubscription, setMonthlySubscription] = useState('');
-    const [tableData, setTableData] = useState([]);
+    //const [tableData, setTableData] = useState([]);
     const [showInputs,setShowInputs] = useState(true);
+
+    const localStorageKey="auctionChitiData";
+    const [tableData, setTableData] = useState(()=>{
+        const storedData=localStorage.getItem(localStorageKey);
+        return storedData ? JSON.parse(storedData):[];
+    });
+    useEffect(()=>{
+        localStorage.setItem(localStorageKey,JSON.stringify(tableData))
+    },[tableData]);
 
     const handleSubmit = async (e) => 
     {
@@ -85,7 +94,7 @@ function ChitData()
                     <input className="auctionTags"type="number"value={sno}onChange={(e) => setSno(e.target.value)}/>
                 </div>
                 <div>
-                    <button className="submitbtn"  type="submit">SUBMIT</button>
+                    <button className="pageSubmitbtn"  type="submit">SUBMIT</button>
                 </div>
             </div>
         

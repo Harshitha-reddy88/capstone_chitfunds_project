@@ -22,8 +22,13 @@
     margin-left: 250px;
 }
 
+.footerPara {
+    margin-top: 20px;
+}
+
 .footerHeading {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-top: 20px;
 }
 
 .footerImg {
@@ -39,5 +44,6 @@
 
 .imagesFooter {
     display: flex;
-    margin-left: 820px;
+    margin-left: 810px;
+    margin-top: 20px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import Navbar from "../navbar/navbar";
 import "./agentMember.css";
 import axios from "axios";
@@ -10,8 +10,18 @@ function AgentMember() {
   const[agentMemberAddress,setAgentMemberAddress]=useState('');
   const[agentMemberAmount,setAgentMemberAmount]=useState('');
   const[agentMemberPhoneNumber,setAgentMemberPhoneNumber]=useState('');
-  const[agentMembertableData, setAgentMemberTableData] = useState([]);
+  //const[agentMembertableData, setAgentMemberTableData] = useState([]);
   const[agentMembershowInputs,setAgentMemberShowInputs] = useState(true);
+
+  const localStorageKey="agentMemberData";
+  const[agentMembertableData, setAgentMemberTableData] = useState(()=>{
+    const storedData=localStorage.getItem(localStorageKey);
+    return storedData ? JSON.parse(storedData):[];
+  });
+
+  useEffect(()=>{
+    localStorage.setItem(localStorageKey,JSON.stringify(agentMembertableData))
+  },[agentMembertableData])
 
   const doubleMmeberSubmit = async (e)=>{
     e.preventDefault();
@@ -97,7 +107,7 @@ function AgentMember() {
             <input className="agentMemberTags"type="number" value={agentMemberId} onChange={(e)=>setAgentMemberId(e.target.value)}/>
           </div>
           <div className="">
-            <button className="submitbtn" type="submit">
+            <button className="pageSubmitbtn" type="submit">
               SUBMIT
             </button>
           </div>

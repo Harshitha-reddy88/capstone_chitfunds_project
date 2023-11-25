@@ -6,9 +6,7 @@ function LandingPage(){
     
     return(
         <div className="backgroungImg">
-            <div >
-
-            </div>
+            
             <div className="firstDiv">
                 <div>
                 <h3 className="text">Your financial future, now at your fingertips.
@@ -27,8 +25,8 @@ function LandingPage(){
                     <h1> To start your journey &#128521;</h1>
                 </div>
 
-                <div>
-                <a className="link"href="/home"><button className="loginBtn">Click Me</button></a>
+                <div className="clickMe">
+                <a className="link"href="/signup"><button className="loginBtn">Click Me</button></a>
                 </div>
 
                 </div>

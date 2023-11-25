@@ -7,7 +7,6 @@
 }
 
 .auctionTags {
-    margin-top: 20px;
     border: none;
     border-bottom: 2px black solid;
     transition: 2.5s ease;
@@ -18,12 +17,13 @@
 .auctionTags:hover {
     margin-left: 18px;
     padding: 10px 30px 10px 5px;
-    margin-top: -1px;
+    margin-top: -2px;
 }
 
 .inputMargin {
     margin-left: 200px;
-    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .inputGap {
@@ -35,9 +35,8 @@
     margin-left: 200px;
 }
 
-.submitbtn {
+.pageSubmitbtn {
     padding: 10px 50px 10px 50px;
-    margin-top: 20px;
     margin-left: 950px;
     transition: 2.5s ease;
     border-radius: 10px;

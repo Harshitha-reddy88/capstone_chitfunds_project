@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/navbar";
 import "./doubleMember.css";
 import axios from "axios";
@@ -10,8 +10,18 @@ function DoubleMember() {
   const[doubleMemberAddress,setDoubleMemberAddress]=useState('');
   const[doubleMemberAmount,setDoubleMemberAmount]=useState('');
   const[doubleMemberPhoneNumber,setDoubleMemberPhoneNumber]=useState('');
-  const[doubleMembertableData, setDoubleMemberTableData] = useState([]);
+  //const[doubleMembertableData, setDoubleMemberTableData] = useState([]);
   const[doubleMembershowInputs,setDoubleMemberShowInputs] = useState(true);
+
+  const localStorageKey="doubleMemberData";
+  const[doubleMembertableData, setDoubleMemberTableData] = useState(()=>{
+    const storedData=localStorage.getItem(localStorageKey);
+    return storedData ? JSON.parse(storedData):[];
+  });
+
+  useEffect(()=>{
+    localStorage.setItem(localStorageKey,JSON.stringify(doubleMembertableData))
+  },[doubleMembertableData]);
 
   const doubleMmeberSubmit = async(e)=>{
     e.preventDefault();
@@ -94,7 +104,7 @@ function DoubleMember() {
             <input className="auctionMemberTags"type="number" value={doubleMemberId} onChange={(e)=>setDoubleMemberId(e.target.value)}/>
           </div>
           <div className="">
-            <button className="submitbtn" type="submit">
+            <button className="pageSubmitbtn" type="submit">
               SUBMIT
             </button>
           </div>
