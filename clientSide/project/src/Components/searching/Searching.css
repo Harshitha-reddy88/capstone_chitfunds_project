@@ -1,0 +1,76 @@
+.searchingImg {
+    width: 800px;
+    height: 500px;
+    margin-left: 490px;
+}
+
+.serchingMainHeading {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.searchingData {
+    width: 550px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.connect {
+    width: 50px;
+    height: 3px;
+    background-color: black;
+    margin-top: 100px;
+}
+
+.gapBack {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.connectBack {
+    margin-right: -100px;
+}
+
+.closeProcess {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.serchingHeading {
+    margin-top: -500px;
+}
+
+.processMainDiv {
+    margin-left: 300px;
+}
+
+.serchingName {
+    margin-top: -100px;
+    color: red;
+}
+
+.unOrderedData {
+    width: 1000px;
+    margin-left: 270px;
+}
+
+.serchexploreBtn {
+    padding: 10px 50px 10px 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 800px;
+    transition: 2s ease;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: aquamarine;
+    opacity: 0.6;
+}
+
+.serchexploreBtn:hover {
+    background-color: cyan;
+    color: black;
+    opacity: 1;
+}

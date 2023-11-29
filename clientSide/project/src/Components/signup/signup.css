@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(4, 4, 75, 0.8), rgba(118, 118, 233, 0.8)), url("https://img.freepik.com/free-photo/business-finance-employment-female-successful-entrepreneurs-concept-confident-smiling-asian-businesswoman-office-worker-white-suit-glasses-using-laptop-help-clients_1258-96398.jpg");
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    perspective: 1000px;
+}
+
+.inner-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: ease 1s;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    padding: 55px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(rgba(0, 0, 100, 0.8), rgba(0, 0, 100, 0.8));
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.signupHeading {
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    margin: 6px 0;
+    height: 32px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
+    font-size: 12px;
+}
+
+.signupBtn,
+.signupSubmit {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    margin: 35px 0 10px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.signupSubmit {
+    position: relative;
+}
+
+.signupSubmit::after {
+    content: '\27a4';
+    color: #333;
+    line-height: 32px;
+    font-size: 17px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
+
+.signupSpan {
+    font-size: 13px;
+    margin-left: 10px;
+    background-color: rgba(0, 0, 100, 0.8);
+}
+
+.card .signupBtn {
+    margin-top: 70px;
+}
+
+.signupAnchor {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 8px;
+}
