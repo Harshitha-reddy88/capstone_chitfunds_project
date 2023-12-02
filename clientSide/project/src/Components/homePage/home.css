@@ -1,0 +1,187 @@
+.color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background-color: rgb(15, 14, 14);
+    opacity: 0.7;
+}
+
+.homeText {
+    color: cyan;
+    font-size: 40px;
+    justify-content: center;
+    opacity: 1;
+    margin-top: 60px;
+}
+
+.homePara {
+    color: gray;
+    justify-content: center;
+}
+
+.Name {
+    color: white;
+}
+
+.chitButton {
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(44, 57, 57);
+    border: none;
+    color: cyan;
+    margin-top: 30px;
+}
+
+.homeLeft {
+    margin-left: 130px;
+    margin-top: 80px;
+}
+
+.bannerDiv {
+    display: flex;
+}
+
+.videoDiv {
+    margin: 100px;
+    margin-left: 200px;
+}
+
+.processDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 130px;
+}
+
+.hoverEffect {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.hoverEffect img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 3s ease;
+}
+
+.processText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: cyan;
+    color: orangered;
+    font-size: 22px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 3s ease;
+}
+
+.hoverEffect:hover img {
+    opacity: 0;
+}
+
+.hoverEffect:hover .processText {
+    opacity: 1;
+}
+
+.processName {
+    display: flex;
+    margin-top: 100px;
+}
+
+.groupMargin {
+    margin-left: 200px;
+}
+
+.contibutionMargin {
+    margin-left: 100px;
+}
+
+.auctionMargin {
+    margin-left: 140px;
+}
+
+.payoutMargin {
+    margin-left: 250px;
+}
+
+.closeMargin {
+    margin-left: 130px;
+}
+
+.homeFooter {
+    margin-top: 50px;
+}
+
+.homePage {
+    display: flex;
+    margin-left: 350px;
+    margin-top: 50px;
+}
+
+.seperator {
+    height: 300px;
+    background-color: black;
+    width: 2px;
+    margin-left: 60px;
+}
+
+.homeClass {
+    width: 500px;
+    margin-top: 35px;
+}
+
+.auctionHomepageText {
+    justify-content: center;
+    margin-left: 60px;
+    margin-top: 35px;
+}
+
+.textTop {
+    color: gray;
+    margin-top: 0px;
+}
+
+.hrLine {
+    margin-top: 50px;
+}
+
+.auctioPage {
+    display: flex;
+    margin-left: 280px;
+    margin-top: 50px;
+}
+
+.homePageClass {
+    width: 500px;
+    height: 250px;
+    margin-top: 35px;
+    margin-left: 60px;
+}
+
+.lastImg {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    margin-right: 40px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.lastDiv {
+    display: flex;
+    margin-left: 200px;
+    margin-top: 50px;
+}

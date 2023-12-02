@@ -1,0 +1,76 @@
+.auctionMemberHeaging {
+    text-align: center;
+}
+
+.backBtn {
+    border: 2px solid black;
+    padding: 10px 30px 10px 30px;
+    margin-top: 90px;
+    margin-left: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.navPage {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.agentMember {
+    display: flex;
+}
+
+.agentMemberTags {
+    margin-top: 20px;
+    border: none;
+    border-bottom: 2px black solid;
+    transition: 2.5s ease;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.agentMemberTags:hover {
+    margin-left: 18px;
+    padding: 10px 30px 10px 5px;
+    margin-top: -1px;
+}
+
+.agentMemberMargin {
+    margin-left: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.agentMemberGap {
+    margin-left: 60px;
+    margin-top: 20px;
+}
+
+.agentgap {
+    margin-left: 20px;
+}
+
+.agentMemberHeading {
+    text-align: center;
+}
+
+.agentMemberRow {
+    padding: 10px 60px 10px 60px;
+    background-color: aquamarine;
+}
+
+.font {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.agentMemberData {
+    text-align: center;
+    background-color: rgb(246, 243, 238);
+}
+
+.agentMemberTable {
+    margin-left: 280px;
+    margin-top: 30px;
+}
