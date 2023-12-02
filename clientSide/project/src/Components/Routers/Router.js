@@ -17,6 +17,7 @@ import ChitData from "../chitData/chitData";
 import DoubleMember from "../doubleMember/doubleMember";
 import AgentMember from "../agentMember/agentMember";
 import AgentChiti from "../agentChiti/agentChiti";
+import OtpVerification from "../otpVerification/OtpVerification";
 
 function Routers() {
     return ( 
@@ -40,6 +41,7 @@ function Routers() {
             {/* <Route path ='/agentChiti' element={<AgentChiti/>}/> */}
             <Route path="/agentChiti" element={<AgentChiti/>}/>
             <Route path ='/agentMember' element={<AgentMember/>}/>
+            <Route path="/doubleOtp" element={<OtpVerification/>}/>
             </Route> 
         </Routes> 
         </div>

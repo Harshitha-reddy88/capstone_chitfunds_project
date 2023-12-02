@@ -1,0 +1,92 @@
+.child-container {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    opacity: 0.7;
+}
+
+.otpHeading {
+    text-align: center;
+    line-height: 1.5;
+    color: white;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.phone {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.verifyText {
+    text-align: center;
+}
+
+.verificationDiv {
+    text-align: center;
+    color: white;
+}
+
+.phoneImgDiv {
+    margin-top: 20px;
+}
+
+.phoneImg {
+    width: 80px;
+}
+
+.phoneText {
+    color: gray;
+    margin-top: 20px;
+}
+
+.phoneText input {
+    padding: 5px 80px 10px 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.verifyBtn {
+    padding: 10px 80px 10px 80px;
+    margin-top: 30px;
+    background-color: black;
+    border: 2px solid cyan;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.verifySpan {
+    font-size: 18px;
+    background-color: black;
+    color: white;
+}
+
+.otpSpan {
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+.okButton {
+    padding: 10px 30px 10px 30px;
+    color: white;
+    background-color: black;
+    border: 2px solid cyan;
+    margin-left: 180px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: ease 3s;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.okButton:hover {
+    background-color: cyan;
+    color: black;
+    opacity: 0.5;
+}

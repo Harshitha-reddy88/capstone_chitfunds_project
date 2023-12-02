@@ -6,7 +6,8 @@ import { useNavigate } from "react-router";
 function Navbar(){
       const search=useNavigate();
       const change=()=>{
-            search("/search") 
+            // search("/search") 
+            search("/doubleOtp")
       }
     return(
       <div>
