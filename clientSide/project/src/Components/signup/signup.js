@@ -1,169 +1,177 @@
 // import React from "react";
-// import  "./signup.css"
-// import {useState} from "react";
+// import "./signup.css";
+// import { useState } from "react";
 // import { useNavigate } from "react-router";
 
-
 // function Signup(){
-//     const[first,setFirst]=useState("");
-//     const[last,setLast]=useState("");
-//     const[user,setUser]=useState("");
-//     const[email,setEmail]=useState("");
-//     const[password,setPassword]=useState("");
-//     const[rePassword,setRepassword]=useState("");
-//     const navigation=useNavigate();
 
-//     function click(){
-//         if(first!="" || last!="" ||user!="" || email!="" || password!="" || rePassword!="" ){
-//             let signupDetails=JSON.parse(localStorage.getItem("signup")) || [];
-//             for(let i=0;i<signupDetails.length;i++){
-//                 if(signupDetails[i].user==user || signupDetails[i].password==password){
-//                     alert("user already exist");
-//                     setFirst("");
-//                     setLast("");
-//                     setUser("");
-//                     setEmail("");
-//                     setPassword("");
-//                     setRepassword("");
-//                     return;
+//     const[signupName,setSiignupName]=useState("");
+//     const[signupEmailId,setSignupEmailId]=useState("");
+//     const[signupPassword,setSignupPassword]=useState("");
+//     const[loginEmail,setLoginEmail]=useState("");
+//     const[loginPassword,setLoginPassword]=useState("");
+//     const loginPage=useNavigate()
 
+//     function signupButtonClick(){
+//         if(signupName !=="" || signupName !==" " || signupEmailId !=="" || signupEmailId !==" " || signupPassword !=="" || signupPassword !==" ")
+//         {
+//             let signupDetails=JSON.parse(localStorage.getItem("signup")) || []
+//             for(let i=0;i<signupDetails.length;i++)
+//             {
+//                 if(signupDetails[i].signupName===signupName || signupDetails[i].signupPassword===signupPassword){
+//                     alert("already have an account please login");
 //                 }
 //             }
-
-//             localStorage.setItem("signup", JSON.stringify([...signupDetails, { first, last, user, email, password , rePassword }]));
-//             alert("signup successfull")
-//             navigation("/home")
-
-
+//             localStorage.setItem("signup",JSON.stringify([...signupDetails,{signupName,signupEmailId,signupPassword}]));
 //         }
 //         else{
-//             alert("enter your details");
+//             alert("please enter the details");
 //         }
 //     }
 
-//     return(
-//         <div className="body">
+//     let login=JSON.parse(localStorage.getItem("signup"))||[];
+//     function loginButtonClick(){
 
-//             <div className="signupForm">
+//         if(loginEmail==="" || loginEmail===" " || loginPassword==="" || loginPassword===" "){
+//             alert("please fill the details");
+//             return;
+//         }
+//         for(let i=0;i<login.length;i++){
+//             if(login[i].signupEmailId===loginEmail && login[i].signupPassword===loginPassword){
+//                 alert("login successful");
+//                 localStorage.setItem("Newdata",JSON.stringify(login[i]));
+//                 loginPage("/home")
+//                 return;
+//             }
+//         }
+        
+//         alert("login failed");
 
-
-//                 <div className="cross"><a className="link1"href="/">&times;</a></div> 
-
-
-//                 <div className="div1">
-//                     <label htmlFor="userName" className="lable" >First Name:</label>
-//                     <br></br>
-//                     <input  className="input userName" value={first} onChange={e=>setFirst(e.target.value)}type="text" placeholder="user name" />
-//                 </div>
-
-//                 <br></br>
-
-//                 <div className="div">
-//                     <label htmlFor="userName" className="lable" >Last Name:</label>
-//                     <br></br>
-//                     <input className="input userName"  value={last} onChange={e=>setLast(e.target.value)}type="text" placeholder="user name" />
-//                 </div>
-
-//                 <br></br>
-
-//                 <div className="div">
-//                     <label htmlFor="userName" className="lable" >User Name:</label>
-//                     <br></br>
-//                     <input className="input userName" value={user} onChange={e=>setUser(e.target.value)} type="text" placeholder="user name" />
-//                 </div>
-
-//                 <br></br>
-
-//                 <div className="div">
-//                     <label htmlFor="userName" className="lable" >Email:</label>
-//                     <br></br>
-//                     <input className="input userName" value={email} onChange={e=>setEmail(e.target.value)} type="text" placeholder="user name" />
-//                 </div>
-
-//                 <br></br>
-
-//                 <div className="div">
-//                     <label htmlFor="password" className="lable" >Password:</label>
-//                     <br></br>
-//                     <input type="password" className="input userName password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="password"  />
-//                 </div>
-
-//                 <br></br>
-
-//                 <div className="div">
-//                     <label htmlFor="password" className="lable" >Re-enter Password:</label>
-//                     <br></br>
-//                     <input type="password" className="input userName password"  value={rePassword} onChange={e=>setRepassword(e.target.value)} placeholder="password" />
-//                 </div>
-
-//                 <br></br>
-
-//                 <button className="sign" onClick={click}>Signup</button>
-
-//                 <h2>have an account ? login</h2>
-
-
-//             </div>
-
-//         </div>
-//     )
-// }
-// export default Signup;
-
-// import React from "react";
-// import "./signup.css";
-// function Signup(){
-
-//     let card=document.getElementById("card");
-
-//     function openRegister(){
-//         card.style.transform="rotateY(-180deg)";
-//     }
-//     function openLogin(){
-//         card.style.transform="rotateY(0deg)";
 //     }
 
-//     return(
+//     const openRegister = () => {
+//         const card = document.getElementById("card");
+//         if (card) {
+//             card.style.transform="rotateY(-180deg)";
+//         }
+//     };
+
+//     const openLogin = () => {
+//         const card = document.getElementById("card");
+//         if (card) {
+//             card.style.transform="rotateY(0deg)";
+//         }
+//     };
+
+//     return (
 //         <div className="container">
 //             <div className="card">
 //                 <div className="inner-box" id="card">
 //                     <div className="card-front">
-//                         <h2>LOGIN</h2>
+//                         <h2 className="signupHeading">LOGIN</h2>
 //                         <form>
-//                             <input type="email" placeholder="Your Email Id" className="input-box" required/>
-//                             <input type="password" placeholder="Password" className="input-box" required/>
-//                             <button className="sumit-btn" type="submit">Submit</button>
+//                             <input type="email" onChange={e =>setLoginEmail(e.target.value)}placeholder="Your Email Id" className="input-box" required/>
+//                             <input type="password" onChange={e =>setLoginPassword(e.target.value)}placeholder="Password" className="input-box" required/>
+//                             <button className="signupSubmit" onClick={loginButtonClick}type="submit" >Submit</button>
+                            
 //                             <input type="checkbox"/><span className="signupSpan">Remember Me</span>
 //                         </form>
-//                         <button type="button" class="signupBtn" onClick={openRegister()}>I'm New Here</button>
-//                         <a href="" className="signupAnchor">Forgot Password</a>
+//                         <button type="button" className="signupBtn" onClick={openRegister}>I'm New Here</button>
+//                         <div className="signupGoogleDiv">
+//                             <img className="signupGoogleImg"src="https://www.techjunkie.com/wp-content/uploads/2020/11/How-to-Change-the-Google-Logo.jpg" alt="error"/>
+//                             <a href="/home" className="signupAnchor">continue with google</a>
+//                         </div>
+                        
 //                     </div>
-
-
-
 //                     <div className="card-back">
-//                     <h2>REGISTER</h2>
+//                         <h2 className="signupHeading">REGISTER</h2>
 //                         <form>
-//                             <input type="text" placeholder="Your Name" className="input-box" required/>
-//                             <input type="email" placeholder="Your Email Id" className="input-box" required/>
-//                             <input type="password" placeholder="Password" className="input-box" required/>
-//                             <button className="sumit-btn" type="submit">Submit</button>
+//                             <input type="text"  onChange={e =>setSiignupName(e.target.value)} placeholder="Your Name" className="input-box" required/>
+//                             <input type="email" onChange={e =>setSignupEmailId(e.target.value)} placeholder="Your Email Id" className="input-box" required/>
+//                             <input type="password" onChange={e =>setSignupPassword(e.target.value)} placeholder="Password" className="input-box" required/>
+//                             <button className="signupSubmit" onClick={signupButtonClick}type="submit">Submit</button>
 //                             <input type="checkbox"/><span className="signupSpan">Remember Me</span>
 //                         </form>
-//                         <button type="button" class="signupBtn" onClick={openLogin()}>I've an account</button>
-//                         <a href="" className="signupAnchor">Forgot Password</a>
+//                         <button type="button" className="signupBtn" onClick={openLogin}>I've an account</button>
+//                         <div className="signupGoogleDiv">
+//                             <img className="signupGoogleImg"src="https://www.techjunkie.com/wp-content/uploads/2020/11/How-to-Change-the-Google-Logo.jpg" alt="error"/>
+//                             <a href="/home" className="signupAnchor">continue with google</a>
+//                         </div>
 //                     </div>
 //                 </div>
 //             </div>
 //         </div>
-//     )
+//     );
 // }
+
 // export default Signup;
 
-import React from "react";
+
+import React, { useEffect } from "react";
 import "./signup.css";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { auth,provider} from "../signupConfig";
+import {signInWithPopup} from 'firebase/auth';
 
 function Signup(){
+
+    const[value,setValue]=useState("");
+    const navigate = useNavigate();
+    const signupClick=()=>{
+        signInWithPopup(auth,provider).then((data)=>{
+            setValue(data.user.email)
+            localStorage.setItem("email",data.user.email)
+            navigate('/home');
+        })
+    }
+    useEffect(()=>{
+        setValue(localStorage.getItem('email'))
+    })
+
+    const[signupName,setSiignupName]=useState("");
+    const[signupEmailId,setSignupEmailId]=useState("");
+    const[signupPassword,setSignupPassword]=useState("");
+    const[loginEmail,setLoginEmail]=useState("");
+    const[loginPassword,setLoginPassword]=useState("");
+    const loginPage=useNavigate()
+
+    function signupButtonClick(){
+        if(signupName !=="" || signupName !==" " || signupEmailId !=="" || signupEmailId !==" " || signupPassword !=="" || signupPassword !==" ")
+        {
+            let signupDetails=JSON.parse(localStorage.getItem("signup")) || []
+            for(let i=0;i<signupDetails.length;i++)
+            {
+                if(signupDetails[i].signupName===signupName || signupDetails[i].signupPassword===signupPassword){
+                    alert("already have an account please login");
+                }
+            }
+            localStorage.setItem("signup",JSON.stringify([...signupDetails,{signupName,signupEmailId,signupPassword}]));
+        }
+        else{
+            alert("please enter the details");
+        }
+    }
+
+    let login=JSON.parse(localStorage.getItem("signup"))||[];
+    function loginButtonClick(){
+
+        if(loginEmail==="" || loginEmail===" " || loginPassword==="" || loginPassword===" "){
+            alert("please fill the details");
+            return;
+        }
+        for(let i=0;i<login.length;i++){
+            if(login[i].signupEmailId===loginEmail && login[i].signupPassword===loginPassword){
+                alert("login successful");
+                localStorage.setItem("Newdata",JSON.stringify(login[i]));
+                loginPage("/home")
+                return;
+            }
+        }
+        
+        alert("login failed");
+
+    }
 
     const openRegister = () => {
         const card = document.getElementById("card");
@@ -186,26 +194,37 @@ function Signup(){
                     <div className="card-front">
                         <h2 className="signupHeading">LOGIN</h2>
                         <form>
-                            <input type="email" placeholder="Your Email Id" className="input-box" required/>
-                            <input type="password" placeholder="Password" className="input-box" required/>
-                            <button className="signupSubmit" type="submit" >Submit</button>
+                            <input type="email" onChange={e =>setLoginEmail(e.target.value)}placeholder="Your Email Id" className="input-box" required/>
+                            <input type="password" onChange={e =>setLoginPassword(e.target.value)}placeholder="Password" className="input-box" required/>
+                            <button className="signupSubmit" onClick={loginButtonClick}type="submit" >Submit</button>
                             
                             <input type="checkbox"/><span className="signupSpan">Remember Me</span>
                         </form>
                         <button type="button" className="signupBtn" onClick={openRegister}>I'm New Here</button>
-                        <a href="/home" className="signupAnchor">Forgot Password</a>
+                        
+                            <div className="signupGoogleDiv">
+                                <img onClick={signupClick} className="signupGoogleImg"src="https://www.techjunkie.com/wp-content/uploads/2020/11/How-to-Change-the-Google-Logo.jpg" alt="error"/>
+                                <h3 onClick={signupClick} className="signupAnchor">continue with google</h3>
+                            </div>
+                        
+                        
                     </div>
                     <div className="card-back">
                         <h2 className="signupHeading">REGISTER</h2>
                         <form>
-                            <input type="text" placeholder="Your Name" className="input-box" required/>
-                            <input type="email" placeholder="Your Email Id" className="input-box" required/>
-                            <input type="password" placeholder="Password" className="input-box" required/>
-                            <button className="signupSubmit" type="submit">Submit</button>
+                            <input type="text"  onChange={e =>setSiignupName(e.target.value)} placeholder="Your Name" className="input-box" required/>
+                            <input type="email" onChange={e =>setSignupEmailId(e.target.value)} placeholder="Your Email Id" className="input-box" required/>
+                            <input type="password" onChange={e =>setSignupPassword(e.target.value)} placeholder="Password" className="input-box" required/>
+                            <button className="signupSubmit" onClick={signupButtonClick}type="submit">Submit</button>
                             <input type="checkbox"/><span className="signupSpan">Remember Me</span>
                         </form>
                         <button type="button" className="signupBtn" onClick={openLogin}>I've an account</button>
-                        <a href="/home" className="signupAnchor">Forgot Password</a>
+                        
+                        <div className="signupGoogleDiv">
+                            <img onClick={signupClick}className="signupGoogleImg"src="https://www.techjunkie.com/wp-content/uploads/2020/11/How-to-Change-the-Google-Logo.jpg" alt="error"/>
+                            <h3 onClick={signupClick} className="signupAnchor">continue with google</h3>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -214,3 +233,5 @@ function Signup(){
 }
 
 export default Signup;
+
+

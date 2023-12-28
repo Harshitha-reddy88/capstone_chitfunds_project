@@ -1,8 +1,22 @@
-import React from "react";
+import React,{useState} from "react";
 import Navbar from "../navbar/navbar";
 import "./home.css";
 import Footer from "../footer/footer";
+import { useNavigate } from "react-router";
 function HomePage(){
+
+    const[showVideo,setShowVideo]=useState(false);
+    const handleShowVideo =()=>{
+        setShowVideo((prevState) => !prevState);
+    }
+
+    
+    const homeNavigation=useNavigate()
+    const homeHow=()=>{
+        homeNavigation("/chitiPage")
+    }
+
+
     return(
         <div >
             <div className="color">
@@ -27,34 +41,44 @@ function HomePage(){
                                 contributing fixed amounts periodically.</h3>
                         </div>
                         <div>
-                            <button className="chitButton">CHIT FUNDS</button>
+                            <button className="homeBtn btn animation">CHIT FUNDS</button>
+                            <button className="clickBtn" onClick={handleShowVideo}></button>
                         </div>
                     </div>
 
 
-                    <div className="videoDiv">
-                        <iframe title="ChitFundsVideo"width="560"height="315"src="https://www.youtube.com/embed/ftMyxTz0IxQ"allowFullScreenframeBorder="0"></iframe>
-                    </div>
+
+                    {showVideo ?(
+
+                        <div className="videoDiv">
+                            <iframe title="ChitFundsVideo"width="580"height="350"src="https://www.youtube.com/embed/ftMyxTz0IxQ"allowFullScreenframeBorder="0"></iframe>
+                        </div>
+                    ):(
+
+
+                        <div>
+                        <img className="bannerImg"src="https://img.lovepik.com/photo/40218/0565.jpg_wh300.jpg" alt="error"/>
+                        </div>
+                    )} 
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#273e87" fill-opacity="1" d="M0,224L120,208C240,192,480,160,720,154.7C960,149,1200,171,1320,181.3L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+                    </svg>
                 </div>
 
 
-                <div className="processName">
-                    <div className="groupMargin">
-                       <h2 className="Name">Forming group</h2>
-                    </div>
-                    <div className="contibutionMargin">
-                       <h2 className="Name">Periodic Contributions</h2>
-                    </div>
-                    <div className="auctionMargin">
-                       <h2 className="Name">Auction</h2>
-                    </div>
-                    <div className="payoutMargin">
-                       <h2 className="Name">Payouts</h2>
-                    </div>
-                    <div className="closeMargin">
-                       <h2 className="Name"> Closure and Dissolution</h2>
-                    </div>
+
+                <div className="Process">
+                    <h1 className="ProcessHead">Process Of Chiti</h1>
+                    <h4 className="ProcessSmall ProcessSmallDiv">It's crucial to thoroughly understand the terms,<br></br>
+                    </h4>
+                    <div className="ProcessSmall"><h4>conditions, and legal implications before joining one.</h4></div>
                 </div>
+
+                
+                
+
+                
 
                 <div className="processDiv">
                     <div className="hoverEffect">
@@ -103,98 +127,185 @@ function HomePage(){
                     </div>
                 </div>
 
+                <div className="processName">
+                    <div className="groupMargin">
+                       <h2 className="Name">Forming group</h2>
+                    </div>
+                    <div className="contibutionMargin">
+                       <h2 className="Name">Periodic Contributions</h2>
+                    </div>
+                    <div className="auctionMargin">
+                       <h2 className="Name">Auction</h2>
+                    </div>
+                    <div className="payoutMargin">
+                       <h2 className="Name">Payouts</h2>
+                    </div>
+                    <div className="closeMargin">
+                       <h2 className="Name"> Closure and Dissolution</h2>
+                    </div>
+                </div>
 
+                <div className="saveDiv beniftDiv">
+
+                    <div>
+                        <div>
+                            <img className="benifitImg"src="https://muthootchits.com/wp-content/uploads/2022/01/financial-inclusion.png" alt="error"/>
+                            <h2 className="save">Inclusion</h2>
+                        </div>
+                    </div>
+                    
+
+
+                    <div>
+                        <div>
+                            <img className="benifitImg"src="https://muthootchits.com/wp-content/uploads/2022/01/business-finance.png" alt="error"/>
+                            <h2 className="save">Business</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <img className="benifitImg"src="https://muthootchits.com/wp-content/uploads/2022/01/twin-benefit-advantage.png" alt="error"/>
+                            <h2 className="save">Twin Benefit</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="saveText benifitText">
+                    <div>
+                        <p className="saveWidth firstBenif">Individuals employed in the informal sector do not meet the eligibility criteria of banks and other financial institutions. </p>
+                    </div>
+                    <div>
+                        <p className="secondWidth secondBenifit">Start as savings and opt to bid for the Prize Money whenever required. Chits offer the dual advantage of systematic savings and providing monthly dividends.</p>
+                    </div>
+                    <div>
+                        <p className="thirdWidth">Chits are an excellent source of finance for business owners who can use the Prize Money to either start a business, finance business operations, or purchase capital assets for the company.</p>
+                    </div>
+                </div>
+
+
+                <div className="chitCycleDiv">
+                    <div className="cycleDiv">
+                        <h1 className="cycleHeading">The Chit Cycle or The Chit Process</h1>
+                        <h4 className="cycleText">Chit funds are popular for their accessibility, as they don't require credit checks or collateral. </h4>
+                    </div>
+                    <div className="cycleImgDiv">
+                        <img className="cycleImg"src="https://muthootchits.com/wp-content/uploads/2021/12/how-chit-works-process-1.jpg" alt="error"/>
+                    </div>
+                </div>
+
+
+                <div className="howChitiDiv howPadding">
+
+                    <div>
+                        <div className="howMargin">
+                            <h1 className="howHeading">How The Chit Work</h1>
+                        </div>
+
+                        <div className="howChitiDiv howMargin">
+                            <div>
+                                <img className="howSmallImg" src="https://kapilchits.com/img/chitvalue-icon.png" alt="error"/>
+                            </div>
+                            <div className="howText">
+                                <h2 className="howHeading">Chit value</h2>
+                                <h4 className="howSmallText">There is a new chit group that is commencing. The value of <br></br>
+                                the chit is 500,000. This amount is known as the Chit Value.</h4>
+                            </div>
+                        </div>
+
+                        <div className="howChitiDiv howMargin">
+                            <div>
+                                <img className="howSmallImg"src="https://kapilchits.com/img/timeperiod-icon.png" alt="error"/>
+                            </div>
+                            <div className="howText">
+                                <h2 className="howHeading">Chit period</h2>
+                                <h4 className="howSmallText">For the purpose of this illustration, we will consider the<br></br>
+                                duration of the chit to be 50 months. This is known as term<br></br>
+                                period for the chit group.
+                                </h4>
+                            </div>
+                        </div>
+
+                        <div className="howChitiDiv howMargin">
+                            <div>
+                                <img className="howSmallImg"src="https://kapilchits.com/img/subscribers-icon.png" alt="error"/>
+                            </div>
+                            <div className="howText">
+                                <h2 className="howHeading">Subscribers</h2>
+                                <h4 className="howSmallText">The Foreman or Chit Fund Company has to gather 50 people <br></br>
+                                who are interested in investing in this chit group. These 50<br></br>
+                                persons are called Subscribers.
+                                </h4>
+                            </div>
+                        </div>
+                        <div>
+                            <button onClick={homeHow}className="landingBtn howBtn btn animation">Read More</button>  
+                        </div>
+
+                    </div>
+
+
+                    <div className="rupeeImgDiv">
+                        <img className="rupeeImg"src="https://kapilchits.com/img/rupee-works.png" alt="error"/>
+                    </div>
+                </div>
+
+
+
+                    <div>
+                        <h1 className="saveHeading">Smart Way To Save and Barrow</h1>
+                    </div>
+
+                <div className="saveDiv">
+
+                    <div>
+                        <div>
+                            <img src="https://kapilchits.com/img/plan-icon.png" alt="error"/>
+                            <h2 className="save">Plan</h2>
+                        </div>
+                    </div>
+                    
+
+
+                    <div>
+                        <div>
+                            <img src="https://kapilchits.com/img/borrow-icon.png" alt="error"/>
+                            <h2 className="save">Borrow</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <img src="https://kapilchits.com/img/reap-icon.png" alt="error"/>
+                            <h2 className="save">Reap</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="saveText">
+                    <div>
+                        <p className="saveWidth">Plan your finances such that you meet every contingent expense without feeling pressured.</p>
+                    </div>
+                    <div>
+                        <p className="secondWidth">A chit is the only financial product that allows you to save and borrow. Be smart; avoid the pitfalls of borrowing at exorbitant costs from money 
+                            lenders and other financial channels. Borrow with lesser hassles.</p>
+                    </div>
+                    <div>
+                        <p className="thirdWidth">Kapil chits is your trustworthy, safe and reliable companion to 
+                            help you reap maximum benefits from investing in a chits.</p>
+                    </div>
+                </div>
 
                 <div>
-
-                    <div className="homePage">
-                        <div>
-                            <img className="homeClass"src="https://byrajesh.com/wp-content/uploads/2022/12/5.png" alt="error"/>
-                        </div>
-                        <div className="seperator"></div>
-                        <div className="auctionHomepageText">
-                            <h3>Auction chits serve as valuable tokens in the dynamic world<br></br>
-                                of auctions, representing the currency of bids. These small,<br></br> 
-                                often paper-based, tokens hold significant power within the<br></br>
-                                auction arena, enabling participants to engage in spirited <br></br>
-                                bidding wars for coveted items
-                            </h3>
-                            <h4 className="textTop">Each chit embodies the potential to secure a prized possession,<br></br>
-                                whether it's a rare artifact, a piece of art, or an antique gem.<br></br>
-                                Participants eagerly exchange these chits, each one a tangible <br></br>
-                                representation of their desire and determination to claim their desired item.</h4>
-                        </div>
-                    </div>
-                    <hr className="hrLine"></hr>
-
-                    <div className="auctioPage">
-                        <div className="auctionHomepageText">
-                            <h3>Agent chits serve as the embodiment of individual entitis<br></br> 
-                                agents within complex simulations,be it in strategic game<br></br>
-                                or sophisticated modeling scenarios.These small,tokens<br></br>
-                                encapsulate the characteristics,behaviors,and traits<br></br>
-                                of the agents they signify
-                            </h3>
-                            <h4 className="textTop">
-                             In agent-based modeling, these chits stand as placeholders<br></br>
-                             for the diverse array of entities populating the<br></br> 
-                             simulated world. Each chit embodies an agent, whether<br></br>
-                              it represents a person, an organization, a species,<br></br> 
-                              or any other unit defined within the simulated environment.
-                            </h4>
-                        </div>
-                        <div className="seperator"></div>
-                        <div>
-                            <img className="homePageClass"src="data:image/jpeg;base64,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" alt="error"/>
-                        </div>
-                    </div>
-
-                    <hr className="hrLine"></hr>
-
-                    <div className="homePage">
-                        <div>
-                            <img className="homeClass"src="https://blog.ipleaders.in/wp-content/uploads/2020/01/main-object-of-company-moa-for-chit-fund.jpg" alt="error"/>
-                        </div>
-                        <div className="seperator"></div>
-                        <div className="auctionHomepageText">
-                            <h3> 'Double chiti' entails the replication or duplication of chits within<br></br>
-                                 a system, introducing a layer of complexity and intrigue to various<br></br>
-                                 scenarios where chits are utilized. This phenomenon can emerge in<br></br> 
-                                 different contexts, whether in gaming, auctions, simulations, or<br></br> 
-                                 even financial systems.
-                            </h3>
-                            <h4 className="textTop">In financial or transactional settings, the<br></br> 
-                             appearance of double chits could signify errors, fraud, or the<br></br> 
-                             unintentional replication of currency. It raises concerns about<br></br>  
-                             accuracy, integrity, and the need for thorough validation within<br></br>  
-                             the system to prevent discrepancies or discrepancies in value.
-                            </h4>
-                        </div>
-                    </div>
+                    <img className="grid"src="https://img.freepik.com/premium-vector/financial-business-statistics-with-bar-graph-candlestick-chart-show-effective-earning-background_120819-1009.jpg" alt="error"/>
                 </div>
+                
 
-                <div className="lastDiv">
-                    <div>
-                        <img className="lastImg"src="https://cdn.pixabay.com/photo/2015/11/03/08/54/meeting-1019773_640.jpg" alt="error"/>
-                    </div>
+                
 
-                    <div>
-                        <img className="lastImg"src="https://cdn.pixabay.com/photo/2017/02/14/07/21/white-male-2064872_640.jpg" alt="error"/>
-                    </div>
 
-                    <div>
-                        <img className="lastImg"src="https://img.myloview.de/fototapeten/weisse-mannchen-jubel-400-47871635.jpg" alt="error"/>
-                    </div>
-
-                    <div>
-                        <img className="lastImg"src="https://img.myloview.de/fototapeten/3d-mannchen-melden-400-107501592.jpg" alt="error"/>
-                    </div>
-
-                    <div>
-                        <img className="lastImg"src="https://img.myloview.de/fototapeten/3d-mannchen-begrussung-rot-400-105977745.jpg" alt="error"/>
-                    </div>
-                </div>
-
+                
 
                 <div className="homeFooter">
                     <Footer/>
@@ -205,3 +316,4 @@ function HomePage(){
     )
 }
 export default HomePage;
+

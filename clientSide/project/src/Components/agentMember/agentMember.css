@@ -57,7 +57,8 @@
 
 .agentMemberRow {
     padding: 10px 60px 10px 60px;
-    background-color: aquamarine;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 .font {
@@ -67,10 +68,51 @@
 
 .agentMemberData {
     text-align: center;
-    background-color: rgb(246, 243, 238);
+    background-color: #dfe7ee;
 }
 
 .agentMemberTable {
     margin-left: 280px;
     margin-top: 30px;
+}
+
+.highlighted {
+    color: var(--secondary-color);
+    background-color: aqua;
+}
+
+.searching {
+    display: flex;
+}
+
+.searchingIcon {
+    margin-top: 10px;
+    margin-left: -40px;
+}
+
+
+/* .tableMember {
+    background-color: #dfe7ee;
+    font-size: 20px;
+    width: 260px;
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: auto;
+    margin-bottom: 30px;
+} */
+
+.tableMember {
+    background-color: #dfe7ee;
+    width: 800px;
+    padding-bottom: 30px;
+    padding-right: 120px;
+    padding: 100px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.tableCross {
+    margin-left: 300px;
+    margin-top: -20px;
 }

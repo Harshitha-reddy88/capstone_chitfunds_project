@@ -71,6 +71,10 @@
     color: #fff;
 }
 
+.input-box::placeholder {
+    color: white;
+}
+
 ::placeholder {
     color: #fff;
     font-size: 12px;
@@ -126,5 +130,19 @@
     display: block;
     text-align: center;
     font-size: 13px;
-    margin-top: 8px;
+    margin-top: 17px;
+    margin-left: 15px;
+}
+
+.signupGoogleImg {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 100%;
+}
+
+.signupGoogleDiv {
+    display: flex;
+    margin-left: 30px;
+    cursor: pointer;
 }

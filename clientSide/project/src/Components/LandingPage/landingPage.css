@@ -1,69 +1,229 @@
-        .backgroungImg {
-            background-image: url("https://www.shutterstock.com/image-photo/businessman-shake-hands-get-know-260nw-1888653679.jpg");
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        
-        .firstDiv {
-            background-color: black;
-            height: 300px;
-            opacity: 0.6;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-        
-        .text {
-            margin-top: 0px;
-            text-align: center;
-            color: white
-        }
-        
-        .secondDiv {
-            background-color: black;
-            margin-top: 280px;
-            background-color: black;
-            height: 400px;
-            color: white;
-            opacity: 0.6;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-        
-        .loginBtn {
-            display: flex;
-            margin: auto;
-            padding: 10px 60px 10px 60px;
-            background-color: black;
-            color: white;
-            font-weight: bold;
-            font-size: 25px;
-            border: none;
-            border-radius: 20px;
-            border: 1px solid cyan;
-            cursor: pointer;
-            transition: background-color 2.5s ease;
-        }
-        
-        .loginBtn:hover {
-            background-color: cyan;
-            color: black;
-        }
-        
-        .link {
-            text-decoration: none;
-        }
-        
-        .clickMe {
-            margin-top: 30px;
-        }
-        
-        .heading {
-            margin-top: 50px;
-            font-size: 60px;
-            background: linear-gradient( to right, #f32170, #ff6b08, #cf23cf, #eedd44);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-        }
+:root {
+    --primary-color: #042ff3;
+    --secondary-color: #273e87;
+    --tertiary-color: #99c0e3;
+    --botton-padding: 14px 40px;
+    --botton-color: white;
+    --button-radius: 20px;
+    --button-font: 15px;
+    --paragrap-size: 17px;
+    --paragraph-color: gray;
+    --heading-font: 40px;
+}
+
+.landingMainDiv {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/006/014/634/original/light-blue-chaotic-dots-seamless-pattern-simple-random-spots-on-white-background-abstract-small-blobs-or-drops-monochrome-texture-winter-flat-backdrop-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn {
+    padding: var(--botton-padding);
+    background-image: linear-gradient(100deg, #273e87, #042ff3);
+    color: var(--botton-color);
+    border-radius: var(--button-radius);
+    border: none;
+    font-size: var(--button-font);
+    font-weight: bold;
+    border-top-right-radius: 0;
+    cursor: pointer;
+    transition: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.registerText {
+    animation-delay: 0.5s;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-top: 20px;
+}
+
+.btn:hover {
+    border-top-right-radius: var(--button-radius)
+}
+
+.landingSecondDiv {
+    background-color: var(--secondary-color);
+    width: 70vh;
+    height: 70vh;
+    margin-top: -410px;
+    margin-left: 1165px;
+    border-top-left-radius: 100%;
+}
+
+.landingFirstDiv {
+    background-color: var(--secondary-color);
+    width: 20vh;
+    height: 20vh;
+    border-bottom-right-radius: 100%;
+}
+
+.landingContent {
+    margin-top: 10%;
+    width: 750px;
+    position: relative;
+    margin-left: 10%;
+}
+
+.landingImg {
+    width: 600px;
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    top: 0;
+    animation-delay: 1s;
+    margin-top: 200px;
+    border-bottom-right-radius: 20%;
+}
+
+.animation {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 1.5s linear forwards;
+}
+
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.landingPara {
+    animation-delay: 0.5s;
+    margin-bottom: 5px;
+    font-size: var(--paragrap-size);
+    color: var(--paragraph-color);
+}
+
+.landingHeading {
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    font-size: var(--heading-font);
+}
+
+
+/* .landingText {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--tertiary-color);
+} */
+
+
+/* .landingMainDiv {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--tertiary-color);
+}
+
+.landingSideDiv {
+    background-color: var(--secondary-color);
+    width: 60%;
+    height: 100vh;
+    border-bottom-left-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingContent {
+    background-color: white;
+    width: 70%;
+    height: 35vh;
+    margin-top: 50px;
+    margin-right: 300px;
+    margin-left: -450px;
+    padding-top: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.landingImgDiv {
+    margin-top: -350px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.loadingImg {
+    width: 400px;
+    height: 450px;
+    margin-right: -100px;
+}
+
+.landingHeading {
+    color: var(--primary-color);
+    font-size: 40px;
+    margin-top: -60px;
+}
+
+.landingText {
+    margin-top: 20px;
+    justify-content: center;
+    color: gray;
+}
+
+.landingBtn {
+    padding: 10px 30px 10px 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: solid var(--secondary-color) 2px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    transition: ease 3.5s;
+}
+
+.landingBtn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@keyframes radioWave {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.landingBtn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.landingBtn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+    animation: radioWave 1.5s linear infinite;
+}
+
+.landingBtn:hover::after {
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 10%;
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+    animation: radioWave 1.5s linear infinite;
+} */

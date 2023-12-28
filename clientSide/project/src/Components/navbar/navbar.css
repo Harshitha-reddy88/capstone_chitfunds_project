@@ -5,7 +5,7 @@
 
 .navBar {
     display: flex;
-    background-color: black;
+    background-color: var(--secondary-color);
     border-radius: 20px;
 }
 
@@ -41,24 +41,21 @@
     bottom: 0;
     height: 2px;
     margin-bottom: 15px;
-    background-color: cyan;
+    background-color: var(--primary-color);
     transition: width 2.5s ease;
-    border-bottom: 2px solid cyan;
+    border-bottom: 2px solid var(--tertiary-color);
 }
 
 .navText:hover::after {
     width: 100%;
 }
 
-
-/* .navText:hover {
-    border-bottom: 3px solid cyan;
-} */
-
 .navMargin {
-    margin-left: 80px;
+    margin-left: 60px;
+    cursor: pointer;
 }
 
 .navmargin {
-    margin-left: 650px;
+    margin-left: 600px;
+    cursor: pointer;
 }

@@ -2,24 +2,27 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./agentChiti.css";
 import Navbar from "../navbar/navbar";
-
+import { Link } from "react-router-dom";
 function AgentChiti() {
     const [agentDataId, setAgentDataId] = useState('');
     const [agentDataChitValue, setAgentDataChitValue] = useState('');
     const [agentDataMonths, setAgentDataMonths] = useState('');
     const [agentDataSubscription, setAgentDataSubscription] = useState('');
-    //const [agentTableData, setAgentTableData] = useState([]);
-    const [agentChitshowInputs, setAgentChitShowInputs] = useState(true);
 
+
+    const[showForm,setShowFrom]=useState(false);
+    
     const localStorageKey="agentChitiData";
-    const [agentTableData, setAgentTableData] = useState(()=>{
+    const [submittedData, setSubmittedData] = useState(()=>{
         const storedData=localStorage.getItem(localStorageKey);
         return storedData ? JSON.parse(storedData):[];
     });
 
     useEffect(()=>{
-        localStorage.setItem(localStorageKey,JSON.stringify(agentTableData))
-    },[agentTableData]);
+        localStorage.setItem(localStorageKey,JSON.stringify(submittedData))
+    },[submittedData]);
+    
+    
 
     const agentChitihandleSubmit = async (e) => {
         e.preventDefault();
@@ -39,33 +42,34 @@ function AgentChiti() {
             };
 
             try {
-                // POST data to the API endpoint
                 const response = await axios.post("http://localhost:8080/agentData", newData);
                 console.log("Data posted:", response.data);
-
-                // Update table data after successful post
-                setAgentTableData([...agentTableData, newData]);
-
-                // Clear input fields after submission
+                setSubmittedData([...submittedData, newData]);
                 setAgentDataId('');
                 setAgentDataChitValue('');
                 setAgentDataMonths('');
                 setAgentDataSubscription('');
+                // setShowFrom(false);
+                // setShowCard(true);
             } catch (error) {
                 console.error("Error posting data:", error);
             }
         }
+        toggleVisibility();
+        setShowCard(true);
+    };
+    const toggleVisibility=()=>{
+        setShowFrom(!showForm);
+    }
+    const[showCard,setShowCard]=useState(!!submittedData.length);
+
+    const [redirectIndex, setRedirectIndex] = useState(1);
+
+    const redirectToNextAgentMember = () => {
+        setRedirectIndex((prevIndex) => prevIndex + 1);
     };
 
-    const handleDelete = (index) => {
-        const updatedData = [...agentTableData];
-        updatedData.splice(index, 1);
-        setAgentTableData(updatedData);
-    };
-
-    const handleEnd = () => {
-        setAgentChitShowInputs(false);
-    };
+    
 
     return (
         <div className="auctioBody">
@@ -74,93 +78,129 @@ function AgentChiti() {
                 <Navbar />
             </div>
 
-            <div className="doubleInputs">
-                <a className="memberLink" href="/agentMember">
-                    <div className="auctionActions auctionMemberBtn">Chit Member Data</div>
-                </a>
-                <div className="auctionActions endButton" onClick={handleEnd}> End </div>
+            <div className="chitiDataBanner"></div>
+
+            <div className="agentInvest">
+                <div className="saveDiv">
+
+                    <div>
+                        <div>
+                            <img src="https://muthootchits.com/wp-content/uploads/2021/10/security_icon4.png" alt="error"/>
+                            <h2 className="save">Join</h2>
+                        </div>
+                    </div>
+                    
+
+
+                    <div>
+                        <div>
+                            <img src="https://muthootchits.com/wp-content/uploads/2021/10/security_icon5.png" alt="error"/>
+                            <h2 className="save">Invest</h2>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <img src="https://muthootchits.com/wp-content/uploads/2021/10/security_icon6.png" alt="error"/>
+                            <h2 className="save">Pay</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="saveText">
+                    <div>
+                        <p className="saveWidth">Plan your finances such that you meet every contingent expense without feeling pressured.</p>
+                    </div>
+                    <div>
+                        <p className="secondWidth">A chit is the only financial product that allows you to save and borrow. Be smart; avoid the pitfalls of borrowing at exorbitant costs from money 
+                            lenders and other financial channels. Borrow with lesser hassles.</p>
+                    </div>
+                    <div>
+                        <p className="thirdWidth">chits is your trustworthy, safe and reliable companion to 
+                            help you reap maximum benefits from investing in a chits.</p>
+                    </div>
+                </div>
             </div>
 
-            <h1 className="agnetData">
-                <u>*AGENT CHITI*</u>
-            </h1>
 
-            {agentChitshowInputs && (
-                <form onSubmit={agentChitihandleSubmit}>
-                    <div className="agnetInputs inputMargin">
-                        <div>
-                            <h3>S.NO :</h3>
-                        </div>
+            {showForm &&(
+            <div className="formMainDiv">
+                
+                    <form className="formData"onSubmit={agentChitihandleSubmit}>
 
                         <div>
-                            <input className="agentTags"type="number"value={agentDataId}onChange={(e) => setAgentDataId(e.target.value)}/>
+                            <h2 className="cross" onClick={toggleVisibility}>&#xd7;</h2>
                         </div>
+                        
 
                         <div>
-                            <button className="pageSubmitbtn" type="submit">SUBMIT</button>
-                        </div>
-                    </div>
-
-                    <div className="agnetInputs inputDiv">
-                        <div className="agnetInputs">
-                            <div>
-                                <h3>CHIT VALUE :</h3>
-                            </div>
-                            <div>
-                                <input className="agentTags"type="number"value={agentDataChitValue}onChange={(e) => setAgentDataChitValue(e.target.value)}/>
-                            </div>
-                        </div>
-
-                        <div className="agnetInputs inputGap">
-                            <div>
-                                <h3>NUMBER OF MONTHS :</h3>
-                            </div>
-                            <div>
-                                <input className="agentTags"type="number"value={agentDataMonths}onChange={(e) => setAgentDataMonths(e.target.value)}/>
-                            </div>
-                        </div>
-
-                        <div className="agnetInputs inputGap">
-                            <div>
-                                <h3>MONTHLY SUBSCRIPTION :</h3>
-                            </div>
-                            <div>
-                                <input className="agentTags"type="number"value={agentDataSubscription}onChange={(e) => setAgentDataSubscription(e.target.value)}/>
+                            <div className="inputDiv">
+                                <div>
+                                    <input placeholder="Enter S.NO"className="agentTags"type="number"value={agentDataId}onChange={(e) => setAgentDataId(e.target.value)}/>
+                                </div>
+                                <div className="chitDataMainDiv">
+                                    <div>
+                                        <input placeholder="Chiti Value" className="agentTags"type="number"value={agentDataChitValue}onChange={(e) => setAgentDataChitValue(e.target.value)}/>
+                                    </div>
+                                </div>
+                            
+                                <div className="chitDataMainDiv">
+                                    <div>
+                                        <input placeholder="Number Of Months"className="agentTags"type="number"value={agentDataMonths}onChange={(e) => setAgentDataMonths(e.target.value)}/>
+                                    </div>
+                                </div>
+        
+                                <div className="chitDataMainDiv">
+                                    <div>
+                                        <input placeholder="Monthly Subscription"className="agentTags"type="number"value={agentDataSubscription}onChange={(e) => setAgentDataSubscription(e.target.value)}/>
+                                    </div>
+                                </div>
+                            
+                                <div>
+                                    <button className="pageSubmitbtn" type="submit">SUBMIT</button> 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>  
+            </div>
             )}
 
-            <div className="tableDiv">
-                <table border="1" className="table">
-                    <thead>
-                        <tr>
-                            <th className="agentTableRow">S.NO</th>
-                            <th className="agentTableRow">CHIT VALUE</th>
-                            <th className="agentTableRow">NUMBER OF MONTHS</th>
-                            <th className="agentTableRow">MONTHLY SUBSCRIPTION</th>
-                            <th className="agentTableRow">ACTIONS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {agentTableData.map((data, index) => (
-                            <tr key={index}>
-                                <td className="agentTableData">{data.agentDataId}</td>
-                                <td className="agentTableData">{data.agentDataChitValue}</td>
-                                <td className="agentTableData">{data.agentDataMonths}</td>
-                                <td className="agentTableData">{data.agentDataSubscription}</td>
-                                <td className="agentTableData">
-                                    <button className="deleteButton" onClick={() => handleDelete(index)}>Delete</button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+
+            <div className="chitDataMainDiv">
+                <div>
+                    {(!showForm || showCard) &&(
+                        <div className="chitiDataDiv">
+                            {submittedData.map((data, index) => (
+                                <div className="chitDataCard" key={index}>
+                                    <h3 className="dataHeading ">ChitFund Data {index + 1}</h3>
+                                    <p className="chitData">S.NO : <span className="cardData">{data.agentDataId}</span></p>
+                                    <p className="chitiData">Chit Value : <span className="cardData">{data.agentDataChitValue}</span></p>
+                                    <p className="chitiData">Number of Months : <span className="cardData">{data.agentDataMonths}</span></p>
+                                    <p className="chitiData">Monthly Subscription : <span className="cardData">{data.agentDataSubscription}</span></p>
+                                    <Link to={`/agentMember/${index + redirectIndex}`}>
+                                        <button className="landingBtn cardBtn btn animation" onClick={redirectToNextAgentMember}>Start</button>
+                                    </Link>
+                                </div>  
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div>
+                    {(!showCard || !showForm) && (
+                        <div>
+                            <div className="addBtn">
+                                <h2 onClick={toggleVisibility}>&#43; add</h2>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
-        </div>
+    </div>
     );
 }
 
 export default AgentChiti;
+
+
 

@@ -1,119 +1,225 @@
-.homeNav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.agnetData {
-    text-align: center;
-}
-
-.agnetInputs {
-    display: flex;
-}
-
-.agentTags {
-    margin-top: 20px;
-    border: none;
-    border-bottom: 2px black solid;
-    transition: 2.5s ease;
-    margin-left: 10px;
-    font-size: 15px;
-}
-
-.agentTags:hover {
-    margin-left: 18px;
-    padding: 10px 30px 10px 5px;
-    margin-top: -1px;
-}
-
-.inputMargin {
-    margin-left: 200px;
-    margin-top: 20px;
-}
-
-.inputGap {
-    margin-left: 100px;
-}
-
-.inputDiv {
-    margin-top: 30px;
-    margin-left: 200px;
-}
-
-.submitbtn {
-    padding: 10px 50px 10px 50px;
-    margin-top: 20px;
-    margin-left: 950px;
-    transition: 2.5s ease;
-    border-radius: 10px;
-    border: none;
-    background-color: aquamarine;
+.cross {
+    font-size: 50px;
+    margin-top: 400px;
+    margin-left: 870px;
     cursor: pointer;
 }
 
-.submitbtn:hover {
-    background-color: cyan;
-    border: none;
+.formMainDiv {
+    background-color: #dfe7ee;
+    width: 800px;
+    padding-bottom: 30px;
+    padding-right: 120px;
+    margin: auto;
 }
 
-.agentTableRow {
-    padding: 10px 60px 10px 60px;
-    background-color: aquamarine;
-}
-
-.agentTableData {
-    text-align: center;
-    background-color: rgb(246, 243, 238);
-}
-
-.tableDiv {
-    margin-left: 340px;
-    margin-top: 50px;
-}
-
-.memberLink {
+.chitData {
     text-decoration: none;
 }
 
-.table {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-}
-
-.deleteButton {
-    padding: 10px 30px 10px 30px;
-    border-radius: 10px;
-    background-color: rgb(246, 243, 238);
-    margin: 5px;
-    transition: 1s ease;
+.addBtn {
+    margin-top: 900px;
+    color: rgb(169, 167, 167);
+    border: 2px solid rgb(205, 227, 246);
+    padding: 5px 25px 5px 25px;
+    margin-left: 80px;
+    position: fixed;
     cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
 }
 
-.deleteButton:hover {
-    background-color: rgb(218, 66, 66);
-    color: white;
-    border: none;
+.navPage {
+    z-index: 1;
 }
 
-.auctionActions {
-    border: 2px solid black;
-    padding: 10px 30px 10px 30px;
-    margin-top: 80px;
-    margin-left: 50px;
-    border-radius: 10px;
+.chitiDataDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 1500px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.chitDataCard {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    padding: 70px;
+    transition: background-color 3.4s ease;
     cursor: pointer;
+    /* background-color: #C5FFF8; */
+    background-color: #dfe7ee;
+    z-index: 0;
+    border-radius: 30px;
 }
 
-.auctionMemberBtn {
-    background-color: rgb(246, 109, 60);
+.chitDataCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: var(--secondary-color);
+    transition: width 1.3s ease, height 1.3s ease;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.chitDataCard:hover::before,
+.chitDataCard:focus-within::before {
+    width: 100%;
+    height: 100%;
+}
+
+.chitDataCard:hover button.cardBtn,
+.chitDataCard:focus-within button.cardBtn {
+    opacity: 1;
+}
+
+.cardBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.chitDataCard:focus-within button.cardBtn {
+    opacity: 1;
+}
+
+.chitDataCard:hover,
+.chitDataCard:focus-within {
     color: white;
-    border: none;
+}
+
+.dataHeading {
+    text-align: center;
+    margin-top: -40px;
+    margin-bottom: 30px;
     font-weight: bold;
 }
 
-.endButton {
-    background-color: rgb(252, 56, 56);
+.chitiData {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.chitData {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.chitDataMainDiv {
+    display: flex;
+}
+
+.cardData {
+    background: none;
+    font-size: 23px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+.agentTags {
     border: none;
-    color: white;
+    border-bottom: 2px solid var(--secondary-color);
+    background: none;
+    padding: 50px;
+    margin-top: 30px;
+}
+
+.agnetInputs {
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+
+/* input tags */
+
+.inputDiv {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.agentTags {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid #ccc;
+    transition: border 0.3s ease;
+    outline: none;
+    width: 500px;
     font-weight: bold;
+}
+
+.agentTags::placeholder {
+    color: var(--secondary-color);
+    font-size: 15px;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.agentTags:focus,
+.agentTags:hover,
+.agentTags:active {
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.agentTags:focus::placeholder,
+.agentTags:hover::placeholder,
+.agentTags:active::placeholder {
+    transform: translateY(-10px);
+    font-size: 12px;
+}
+
+.pageSubmitbtn {
+    margin-left: -1px;
+    margin-left: 1px;
+    padding-left: 235px;
+    padding-right: 235px;
+    margin-top: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chitiDataBanner {
+    position: relative;
+    z-index: 0;
+}
+
+.formMainDiv {
+    position: relative;
+}
+
+.chitiDataBanner {
+    position: relative;
+    background-image: url("https://assets.kpmg.com/is/image/kpmg/ch-blog-global-banking-mna-perspectives-for-2022-header-1400x328:cq5dam.web.2000.500");
+    background-size: cover;
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    color: white;
+}
+
+.formData {
+    margin-top: -200px;
+}
+
+.agentInvest {
+    margin-top: 150px;
+    margin-bottom: 150px;
 }

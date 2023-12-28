@@ -1,104 +1,11 @@
-.color {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75%;
-    background-color: rgb(15, 14, 14);
-    opacity: 0.7;
-}
-
-.homeText {
-    color: cyan;
-    font-size: 40px;
-    justify-content: center;
-    opacity: 1;
-    margin-top: 60px;
-}
-
 .homePara {
     color: gray;
     justify-content: center;
-}
-
-.Name {
-    color: white;
-}
-
-.chitButton {
-    padding: 10px 30px 10px 30px;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: bold;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color: rgb(44, 57, 57);
-    border: none;
-    color: cyan;
     margin-top: 30px;
 }
 
 .homeLeft {
-    margin-left: 130px;
-    margin-top: 80px;
-}
-
-.bannerDiv {
-    display: flex;
-}
-
-.videoDiv {
-    margin: 100px;
-    margin-left: 200px;
-}
-
-.processDiv {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-left: 130px;
-}
-
-.hoverEffect {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-}
-
-.hoverEffect img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 3s ease;
-}
-
-.processText {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    background-color: cyan;
-    color: orangered;
-    font-size: 22px;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 3s ease;
-}
-
-.hoverEffect:hover img {
-    opacity: 0;
-}
-
-.hoverEffect:hover .processText {
-    opacity: 1;
-}
-
-.processName {
-    display: flex;
+    margin-left: 80px;
     margin-top: 100px;
 }
 
@@ -126,12 +33,6 @@
     margin-top: 50px;
 }
 
-.homePage {
-    display: flex;
-    margin-left: 350px;
-    margin-top: 50px;
-}
-
 .seperator {
     height: 300px;
     background-color: black;
@@ -142,10 +43,12 @@
 .homeClass {
     width: 500px;
     margin-top: 35px;
+    margin-left: -300px;
 }
 
 .auctionHomepageText {
     justify-content: center;
+    align-items: center;
     margin-left: 60px;
     margin-top: 35px;
 }
@@ -156,12 +59,6 @@
 }
 
 .hrLine {
-    margin-top: 50px;
-}
-
-.auctioPage {
-    display: flex;
-    margin-left: 280px;
     margin-top: 50px;
 }
 
@@ -184,4 +81,385 @@
     display: flex;
     margin-left: 200px;
     margin-top: 50px;
+}
+
+
+/* my changes */
+
+.color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: var(--secondary-color);
+}
+
+.homeText {
+    color: var(--tertiary-color);
+    font-size: 40px;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.bannerImg {
+    width: 700px;
+    margin-left: 150px;
+    margin-top: 130px;
+    border-radius: 100%;
+}
+
+.homeBtn {
+    margin-top: 20px;
+}
+
+.clickBtn {
+    position: relative;
+    margin-left: 50px;
+    align-items: center;
+}
+
+.clickBtn::after {
+    content: '\27a4';
+    color: #333;
+    line-height: 32px;
+    font-size: 40px;
+    height: 32px;
+    width: 40px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--tertiary-color);
+    color: white;
+    position: absolute;
+    top: -9px;
+}
+
+
+/* Styling for the waves */
+
+.clickBtn::before {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: ripple 1s linear infinite;
+    opacity: 0;
+    transform: scale(0);
+    margin-left: -25px;
+    margin-top: -5px;
+}
+
+
+/* Animation for the waves */
+
+
+/* @keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+} */
+
+.videoDiv {
+    margin-top: 150px;
+    margin-left: 200px;
+}
+
+.bannerDiv {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* margin-top: 20px; */
+}
+
+svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: 500px;
+}
+
+.ProcessHead {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -130px;
+}
+
+.ProcessSmall {
+    align-items: center;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+}
+
+.ProcessSmallDiv {
+    margin-top: 20px;
+}
+
+.hoverEffect {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.hoverEffect img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 3s ease;
+}
+
+.processText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 22px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 3s ease;
+    cursor: pointer;
+}
+
+.hoverEffect:hover img {
+    opacity: 0;
+    width: 200px;
+}
+
+.hoverEffect:hover .processText {
+    opacity: 1;
+}
+
+.Name {
+    color: black;
+}
+
+.processName {
+    display: flex;
+    margin-top: 15px;
+}
+
+.processDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 130px;
+}
+
+.howChitiDiv {
+    background-color: #dfe7ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.howPadding {
+    padding: 80px;
+    margin-top: 100px;
+}
+
+.howText {
+    margin-left: 40px;
+}
+
+.rupeeImgDiv {
+    margin-left: 180px;
+}
+
+.rupeeImg {
+    width: 500px;
+}
+
+.howSmallImg {
+    margin-top: 10px;
+    width: 80px;
+}
+
+.howMargin {
+    margin-top: 50px;
+}
+
+.howSmallText {
+    color: gray;
+    margin-top: 10px;
+}
+
+.howBtn {
+    margin-left: 120px;
+    margin-top: 50px;
+}
+
+.howHeading {
+    color: rgb(83, 82, 82);
+}
+
+.saveDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.saveText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.saveTextSmall {
+    align-items: center;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+}
+
+.saveHeading {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    color: var(--primary-color);
+}
+
+.save {
+    margin-top: 20px;
+}
+
+.saveWidth {
+    width: 400px;
+    align-items: center;
+    margin-top: -20px;
+    margin-left: 40px;
+    color: gray;
+}
+
+.secondWidth {
+    width: 380px;
+    margin-left: 60px;
+    margin-top: 30px;
+    color: gray;
+}
+
+.thirdWidth {
+    width: 380px;
+    margin-left: 120px;
+    color: gray;
+}
+
+.saveText {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.homePage {
+    display: flex;
+    margin-left: 350px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.auctioPage {
+    display: flex;
+    margin-left: -80px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.cycleHeading {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 60px;
+    margin-top: -20px;
+    background-color: white;
+    width: 560px;
+    margin-left: 130px;
+}
+
+.cycleImg {
+    width: 1200px;
+    height: 500px;
+    margin-top: 50px;
+}
+
+.cycleDiv {
+    border: 5px solid var(--primary-color);
+    height: 85px;
+    padding-top: 0px;
+    width: 800px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.cycleImgDiv {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.cycleText {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.chitCycleDiv {
+    color: black;
+    padding-bottom: 50px;
+}
+
+.cycleSvg {
+    margin-top: 1000px;
+}
+
+.grid {
+    width: 100%;
+    height: 40vh;
+}
+
+.benifitImg {
+    width: 70px;
+}
+
+.beniftDiv {
+    margin-top: 150px;
+}
+
+.benifitText {
+    margin-bottom: 100px;
+}
+
+.secondBenifit {
+    margin-top: -1px;
+    margin-top: 5px;
+}
+
+.firstBenif {
+    margin-top: 10px;
+    margin-left: -10px;
 }

@@ -1,0 +1,92 @@
+.howChiti {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.howTopGap {
+    margin-top: 100px;
+}
+
+.rupeeDiv {
+    margin-top: 30px;
+    margin-left: 180px;
+}
+
+.formanDiv {
+    display: flex;
+}
+
+.formanMainDiv {
+    background-color: #e7f1fb;
+    margin-top: 100px;
+    padding: 80px;
+}
+
+.monthsMainDiv {
+    margin-top: 100px;
+    padding: 80px;
+}
+
+.formanText {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+.discountDiv {
+    margin-top: 20px;
+    margin-left: 180px;
+}
+
+.formanImg {
+    width: 400px;
+    margin-left: 240px;
+}
+
+.monthsImg {
+    margin-left: 200px;
+}
+
+.chitiPageHeding {
+    color: rgb(83, 82, 82);
+}
+
+.formanHeading {
+    margin-top: 25px;
+}
+
+.subHeading {
+    color: rgb(128, 128, 128);
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.formanPara {
+    color: gray;
+    font-size: 17px;
+    margin-left: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.forMan {
+    color: gray;
+    font-size: 17px;
+    margin-left: 45px;
+    font-weight: bold;
+}
+
+.discountText {
+    color: gray;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.discountImg {
+    margin-left: 290px;
+}
+
+.lastThird {
+    padding: 120px;
+}
